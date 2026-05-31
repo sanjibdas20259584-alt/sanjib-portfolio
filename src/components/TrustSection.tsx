@@ -26,7 +26,7 @@ const trustCards = [
 
 export const TrustSection = () => {
   return (
-    <section className="w-full max-w-7xl mx-auto px-6 md:px-8 pt-[64px] pb-[64px] flex flex-col items-center">
+    <section className="w-full max-w-7xl mx-auto px-5 sm:px-6 md:px-8 pt-12 md:pt-[64px] pb-12 md:pb-[64px] flex flex-col items-center">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

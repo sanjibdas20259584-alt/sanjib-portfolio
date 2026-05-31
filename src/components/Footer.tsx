@@ -4,7 +4,7 @@ export const Footer = () => {
   const year = new Date().getFullYear();
   
   return (
-    <footer className="w-full border-t border-[rgba(164,132,215,0.1)] py-16 flex flex-col items-center gap-6">
+    <footer className="w-full border-t border-[rgba(164,132,215,0.1)] py-10 md:py-16 flex flex-col items-center gap-6">
       <div className="font-serif text-[32px] text-foreground tracking-tight">Sanjib Das</div>
       
       <p className="text-muted text-center text-sm md:text-base font-sans">

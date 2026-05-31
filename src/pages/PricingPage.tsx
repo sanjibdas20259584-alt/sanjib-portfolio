@@ -29,51 +29,51 @@ export const PricingPage = () => {
   const showBundles = activeFilter === "All" || activeFilter === "Bundles";
 
   return (
-    <div className="w-full min-h-screen bg-background pt-[100px] pb-16 relative">
+    <div className="w-full min-h-screen bg-background pt-[80px] md:pt-[100px] pb-12 md:pb-16 relative">
       {/* Background aurora glow */}
       <div className="absolute top-0 right-0 w-full md:w-1/2 h-[500px] bg-[radial-gradient(ellipse_at_top_right,_var(--color-purple-glow)_0%,_transparent_70%)] opacity-30 blur-[80px] z-0 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 relative z-10">
         {/* Back Link */}
-        <div className="mb-8">
+        <div className="mb-6 md:mb-8">
           <Link 
             to="/#my-works" 
-            className="inline-flex items-center gap-2 text-muted hover:text-white transition-colors font-sans text-sm"
+            className="inline-flex items-center gap-2 text-muted hover:text-white transition-colors font-sans text-xs sm:text-sm"
           >
-            <ArrowLeft size={16} /> Back to Portfolio
+            <ArrowLeft size={14} /> Back to Portfolio
           </Link>
         </div>
 
         {/* Title and Subtitle */}
-        <div className="flex flex-col items-center text-center space-y-4 mb-6">
-          <div className="glass-pill">PRICING PLANS</div>
-          <h1 className="font-serif text-[48px] md:text-[64px] leading-[1.05] tracking-tight text-gradient">
+        <div className="flex flex-col items-center text-center space-y-3 md:space-y-4 mb-4 md:mb-6">
+          <div className="glass-pill !text-[10px] !px-3 !py-1">PRICING PLANS</div>
+          <h1 className="font-serif text-[36px] sm:text-[48px] md:text-[64px] leading-[1.1] sm:leading-[1.05] tracking-tight text-gradient">
             Pricing
           </h1>
-          <p className="text-muted text-lg md:text-xl font-sans max-w-2xl">
+          <p className="text-muted text-sm sm:text-base md:text-xl font-sans max-w-2xl px-2">
             Simple, flexible pricing for design, AI ads, UGC-style creatives, and brand identity work.
           </p>
         </div>
 
         {/* Small Notice Note */}
-        <div className="flex flex-col items-center gap-3 mb-12">
-          <div className="glass-card px-5 py-2.5 rounded-full text-xs text-muted/90 font-sans max-w-2xl text-center border-[rgba(164,132,215,0.15)] flex items-center gap-2 shadow-[0_0_15px_rgba(123,57,252,0.02)]">
+        <div className="flex flex-col items-center gap-2 md:gap-3 mb-8 md:mb-12">
+          <div className="glass-card px-4 py-2 sm:px-5 sm:py-2.5 rounded-2xl sm:rounded-full text-[11px] sm:text-xs text-muted/90 font-sans max-w-2xl text-center border-[rgba(164,132,215,0.15)] flex items-center gap-2 shadow-[0_0_15px_rgba(123,57,252,0.02)]">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse shrink-0" />
             <span>
               Final pricing may vary based on project complexity, revisions, delivery time, and the number of creatives required.
             </span>
           </div>
-          <span className="text-xs text-muted/60 font-sans italic">
+          <span className="text-[10px] sm:text-xs text-muted/60 font-sans italic">
             Click Get Started to discuss your project directly on WhatsApp.
           </span>
         </div>
 
         {/* Category Filters (Sticky Scroll-Reactive Container) */}
         <div 
-          className={`flex w-full overflow-x-auto hide-scrollbar justify-start md:justify-center gap-3 mb-12 pb-2 transition-all duration-300 ease-in-out ${
+          className={`flex w-full overflow-x-auto hide-scrollbar justify-start md:justify-center gap-2 mb-8 md:mb-12 pb-2 transition-all duration-300 ease-in-out ${
             isScrolled 
-              ? 'sticky top-3 z-50 bg-[rgba(30,22,54,0.85)] backdrop-blur-[24px] border border-[rgba(164,132,215,0.45)] shadow-[0_8px_32px_rgba(0,0,0,0.4)] py-2.5 px-4 rounded-full max-w-[calc(100vw-2rem)] md:max-w-max mx-auto' 
-              : 'sticky top-[75px] z-40 bg-[rgba(9, 9, 15, 0.8)] backdrop-blur-[12px] border border-[rgba(164,132,215,0.1)] py-2.5 px-4 rounded-full w-full'
+              ? 'sticky top-3 z-50 bg-[rgba(30,22,54,0.85)] backdrop-blur-[24px] border border-[rgba(164,132,215,0.45)] shadow-[0_8px_32px_rgba(0,0,0,0.4)] py-2 px-3 rounded-full max-w-[calc(100vw-2rem)] md:max-w-max mx-auto' 
+              : 'sticky top-4 md:top-[75px] z-40 bg-[rgba(9, 9, 15, 0.8)] backdrop-blur-[12px] border border-[rgba(164,132,215,0.1)] py-2 px-3 rounded-full w-full'
           }`}
         >
           {categories.map((cat) => (
@@ -89,7 +89,7 @@ export const PricingPage = () => {
                   metadata: { selectedFilter: cat },
                 });
               }}
-              className={`shrink-0 rounded-full px-5 py-2.5 text-xs font-cabin tracking-widest font-bold uppercase transition-all ${
+              className={`shrink-0 rounded-full px-4 py-2 text-[10px] md:text-xs font-cabin tracking-widest font-bold uppercase transition-all ${
                 activeFilter === cat 
                   ? 'bg-primary text-white shadow-[0_0_15px_rgba(123,57,252,0.4)] border border-primary' 
                   : 'glass-card text-muted hover:text-white'
@@ -101,7 +101,7 @@ export const PricingPage = () => {
         </div>
 
         {/* Structured Sections */}
-        <div className="space-y-20 md:space-y-24 mt-16 max-w-6xl mx-auto relative z-10">
+        <div className="space-y-12 md:space-y-24 mt-10 md:mt-16 max-w-6xl mx-auto relative z-10">
           
           {/* 1. AI ADS SECTION */}
           {showAIAds && (
@@ -328,7 +328,7 @@ Can we discuss this?`;
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.3 }}
-      className={`relative rounded-[2rem] p-8 flex flex-col items-start text-left transition-all duration-300 h-full ${
+      className={`relative rounded-[1.5rem] md:rounded-[2rem] p-5 sm:p-6 md:p-8 flex flex-col items-start text-left transition-all duration-300 h-auto md:h-full ${
         pkg.isPopular 
           ? 'bg-[#181131] border border-[rgba(164,132,215,0.6)] shadow-[0_0_40px_rgba(123,57,252,0.15)] shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] pt-12 hover:border-primary hover:bg-[#1f163d]' 
           : 'glass-card hover:border-primary/50 hover:bg-[rgba(164,132,215,0.05)]'
@@ -342,34 +342,34 @@ Can we discuss this?`;
       )}
 
       {/* Category Tag */}
-      <span className="text-[10px] font-cabin tracking-wider text-primary uppercase font-bold mb-2">
+      <span className="text-[9px] sm:text-[10px] font-cabin tracking-wider text-primary uppercase font-bold mb-1.5 md:mb-2">
         {pkg.subcategory ? pkg.subcategory : pkg.category}
       </span>
 
       {/* Package Title */}
-      <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-3 font-semibold">
+      <h3 className="font-serif text-xl sm:text-2xl md:text-3xl text-foreground mb-2 md:mb-3 font-semibold">
         {pkg.title}
       </h3>
 
       {/* Price */}
-      <div className="flex items-baseline gap-1.5 mb-4 shrink-0">
-        <span className="font-serif text-3xl sm:text-4xl text-foreground font-bold">{mainPrice}</span>
+      <div className="flex items-baseline gap-1.5 mb-3 md:mb-4 shrink-0">
+        <span className="font-serif text-2xl sm:text-3xl md:text-4xl text-foreground font-bold">{mainPrice}</span>
         {priceUnit && (
-          <span className="text-muted text-xs sm:text-sm font-sans">{priceUnit}</span>
+          <span className="text-muted text-[10px] sm:text-xs md:text-sm font-sans">{priceUnit}</span>
         )}
       </div>
 
       {/* Description */}
-      <p className="text-muted text-sm leading-relaxed mb-6 font-sans shrink-0">
+      <p className="text-muted text-xs sm:text-sm leading-relaxed mb-4 md:mb-6 font-sans shrink-0">
         {pkg.description}
       </p>
 
       {/* Features List */}
-      <ul className="space-y-3 mb-6 w-full flex-grow">
+      <ul className="space-y-2 md:space-y-3 mb-5 md:mb-6 w-full flex-grow">
         {pkg.features.map((feature, idx) => (
-          <li key={idx} className="flex items-start gap-3 text-sm">
-            <div className="shrink-0 w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center text-primary mt-0.5">
-              <Check size={10} strokeWidth={3} />
+          <li key={idx} className="flex items-start gap-2.5 md:gap-3 text-xs sm:text-sm">
+            <div className="shrink-0 w-4.5 h-4.5 md:w-5 md:h-5 rounded-full bg-primary/20 flex items-center justify-center text-primary mt-0.5">
+              <Check size={9} strokeWidth={3} />
             </div>
             <span className="text-foreground/90 font-medium">{feature}</span>
           </li>
@@ -377,11 +377,11 @@ Can we discuss this?`;
       </ul>
 
       {/* Best For Box */}
-      <div className="w-full mt-auto pt-4 border-t border-[rgba(164,132,215,0.15)] mb-6 shrink-0">
-        <span className="text-xs font-cabin tracking-wider text-primary uppercase font-bold block mb-1">
+      <div className="w-full mt-auto pt-3 md:pt-4 border-t border-[rgba(164,132,215,0.15)] mb-5 md:mb-6 shrink-0">
+        <span className="text-[10px] sm:text-xs font-cabin tracking-wider text-primary uppercase font-bold block mb-1">
           Best For
         </span>
-        <p className="text-xs sm:text-sm text-muted/90 font-sans leading-relaxed">
+        <p className="text-[10px] sm:text-xs md:text-sm text-muted/90 font-sans leading-relaxed">
           {pkg.bestFor}
         </p>
       </div>

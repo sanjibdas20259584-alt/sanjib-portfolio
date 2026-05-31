@@ -184,12 +184,12 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="border-b border-[rgba(164,132,215,0.15)] bg-[rgba(30,22,54,0.3)] backdrop-blur-xl sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-6">
           <div>
             <h1 className="font-serif text-xl text-foreground">Sanjib Admin</h1>
             <p className="text-xs text-muted/60 font-sans">Last updated: {lastRefresh.toLocaleTimeString()}</p>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-end">
             <button
               onClick={fetchData}
               disabled={loading}

@@ -12,7 +12,7 @@ export const AboutSection = () => {
   ];
 
   return (
-    <section id="about-me" className="w-full max-w-7xl mx-auto px-6 md:px-8 pt-[64px] pb-8 flex flex-col items-center">
+    <section id="about-me" className="w-full max-w-7xl mx-auto px-5 sm:px-6 md:px-8 pt-12 md:pt-[64px] pb-6 md:pb-8 flex flex-col items-center">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

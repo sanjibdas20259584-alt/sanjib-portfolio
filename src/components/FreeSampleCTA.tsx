@@ -8,7 +8,7 @@ export const FreeSampleCTA = () => {
   )}`;
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-6 md:px-8 pt-[32px] pb-[64px]">
+    <section className="w-full max-w-7xl mx-auto px-5 sm:px-6 md:px-8 pt-6 pb-12 md:pt-[32px] md:pb-[64px]">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

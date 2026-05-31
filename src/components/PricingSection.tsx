@@ -6,21 +6,21 @@ import { trackEvent } from "../lib/analytics";
 
 export const PricingSection = () => {
   return (
-    <section id="pricing" className="w-full max-w-7xl mx-auto px-6 md:px-8 pt-[64px] pb-[64px] flex flex-col items-center">
+    <section id="pricing" className="w-full max-w-7xl mx-auto px-5 sm:px-6 md:px-8 pt-12 md:pt-16 pb-12 md:pb-20 flex flex-col items-center">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
-        className="flex flex-col items-center text-center space-y-6 max-w-3xl mb-16 md:mb-24"
+        className="flex flex-col items-center text-center space-y-4 md:space-y-6 max-w-3xl mb-10 md:mb-24"
       >
         <div className="glass-pill">PRICING</div>
         
-        <h2 className="font-serif text-[44px] md:text-[56px] leading-[1.05] tracking-tight">
+        <h2 className="font-serif text-[34px] sm:text-[44px] md:text-[56px] leading-[1.1] sm:leading-[1.05] tracking-tight">
           Straightforward <span className="italic text-gradient">pricing</span>
         </h2>
         
-        <p className="text-muted text-lg md:text-xl font-sans max-w-2xl">
+        <p className="text-muted text-sm sm:text-base md:text-xl font-sans max-w-2xl px-2">
           Straightforward pricing for AI ad creatives, UGC concepts, and design work.
         </p>
       </motion.div>
@@ -44,7 +44,7 @@ Can we discuss this?`;
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className={`relative rounded-[2rem] p-8 flex flex-col items-center text-center ${
+              className={`relative rounded-[2rem] p-6 sm:p-8 flex flex-col items-center text-center ${
                 plan.isPopular 
                   ? 'bg-[#181131] border border-[rgba(164,132,215,0.6)] shadow-[0_0_40px_rgba(123,57,252,0.15)] shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] pt-12 md:-mt-8 md:mb-8' 
                   : 'glass-card'
@@ -56,25 +56,25 @@ Can we discuss this?`;
                 </div>
               )}
 
-              <h3 className="font-sans text-xl font-medium text-muted mb-4">{plan.title}</h3>
-              <div className="font-serif text-6xl md:text-[64px] text-foreground mb-4">
+              <h3 className="font-sans text-lg md:text-xl font-medium text-muted mb-3 md:mb-4">{plan.title}</h3>
+              <div className="font-serif text-5xl md:text-[64px] text-foreground mb-3 md:mb-4">
                 {plan.price}
               </div>
 
               {/* Best For line */}
               {plan.bestFor && (
-                <p className="text-xs text-muted/80 font-sans mb-8 italic">
+                <p className="text-xs text-muted/80 font-sans mb-6 md:mb-8 italic">
                   {plan.bestFor}
                 </p>
               )}
 
-              <ul className="flex flex-col gap-4 text-left w-full mb-10 flex-grow">
+              <ul className="flex flex-col gap-3 md:gap-4 text-left w-full mb-6 md:mb-10 flex-grow">
                 {plan.features.map((feature, j) => (
                   <li key={j} className="flex flex-row items-center gap-3">
                     <div className="shrink-0 w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center text-primary">
                       <Check size={12} strokeWidth={3} />
                     </div>
-                    <span className="text-foreground/90 font-medium">{feature}</span>
+                    <span className="text-foreground/90 font-medium text-sm">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -103,9 +103,9 @@ Can we discuss this?`;
                     metadata: { packageName: plan.title, price: plan.price, category: "homepage" },
                   });
                 }}
-                className={`w-full ${plan.isPopular ? 'btn-primary' : 'btn-secondary'} mt-auto flex items-center justify-center gap-2`}
+                className={`w-full ${plan.isPopular ? 'btn-primary' : 'btn-secondary'} mt-auto py-3.5 px-4 rounded-xl text-sm font-sans font-semibold flex items-center justify-center gap-2`}
               >
-                <MessageSquare size={18} />
+                <MessageSquare size={16} />
                 Get Started
               </a>
             </motion.div>
@@ -114,7 +114,7 @@ Can we discuss this?`;
       </div>
 
       {/* View Full Pricing Button */}
-      <div className="flex justify-center mt-16 w-full px-6 md:px-0">
+      <div className="flex justify-center mt-10 md:mt-16 w-full px-5 md:px-0">
         <Link 
           to="/pricing" 
           onClick={() => trackEvent({
@@ -122,7 +122,7 @@ Can we discuss this?`;
             elementName: "view_full_pricing",
             category: "navigation",
           })}
-          className="btn-primary px-8 py-4 text-base md:text-lg font-semibold tracking-wide shadow-lg relative z-20 w-full sm:w-auto text-center hover:brightness-110"
+          className="btn-primary px-8 py-3.5 sm:py-4 text-base md:text-lg font-semibold tracking-wide shadow-lg relative z-20 w-full sm:w-auto text-center hover:brightness-110"
         >
           View Full Pricing
         </Link>

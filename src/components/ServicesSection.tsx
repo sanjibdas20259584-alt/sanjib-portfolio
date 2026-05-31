@@ -23,7 +23,7 @@ export const ServicesSection = () => {
         </p>
       </motion.div>
 
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl">
+      <div className="w-full grid grid-cols-2 max-[380px]:grid-cols-1 md:grid-cols-2 gap-3 md:gap-8 max-w-5xl">
         {services.map((service, i) => {
           const IconComponent = service.icon;
           return (
@@ -33,25 +33,25 @@ export const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="glass-card rounded-[2rem] p-8 flex flex-col items-start text-left transition-all hover:border-primary hover:bg-[rgba(164,132,215,0.05)] duration-300"
+              className="glass-card rounded-[1.5rem] md:rounded-[2rem] p-4 sm:p-6 md:p-8 flex flex-col items-start text-left transition-all hover:border-primary hover:bg-[rgba(164,132,215,0.05)] duration-300 h-full"
             >
               {/* Icon */}
-              <div className="w-12 h-12 rounded-xl bg-primary/15 text-primary flex items-center justify-center mb-6 shrink-0">
-                <IconComponent size={24} />
+              <div className="w-9 h-9 md:w-12 md:h-12 rounded-xl bg-primary/15 text-primary flex items-center justify-center mb-4 md:mb-6 shrink-0">
+                <IconComponent className="w-5 h-5 md:w-6 md:h-6" />
               </div>
 
               {/* Title */}
-              <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-3 font-semibold">
+              <h3 className="font-serif text-lg sm:text-xl md:text-2xl lg:text-3xl text-foreground mb-0 md:mb-3 font-semibold leading-snug">
                 {service.title}
               </h3>
 
               {/* Description */}
-              <p className="text-muted text-sm sm:text-base leading-relaxed mb-6 font-sans">
+              <p className="text-muted text-sm sm:text-base leading-relaxed mb-6 font-sans hidden md:block">
                 {service.description}
               </p>
 
               {/* Bullet Points */}
-              <ul className="space-y-3 mb-6 w-full flex-grow">
+              <ul className="space-y-3 mb-6 w-full flex-grow hidden md:block">
                 {service.bullets.map((bullet, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-sm">
                     <div className="shrink-0 w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center text-primary mt-0.5">
@@ -63,10 +63,10 @@ export const ServicesSection = () => {
               </ul>
 
               {/* Divider */}
-              <div className="w-full h-px bg-[rgba(164,132,215,0.15)] my-5 shrink-0" />
+              <div className="w-full h-px bg-[rgba(164,132,215,0.15)] my-5 shrink-0 hidden md:block" />
 
               {/* Best For */}
-              <div className="w-full shrink-0">
+              <div className="w-full shrink-0 hidden md:block">
                 <span className="text-xs font-cabin tracking-wider text-primary uppercase font-bold block mb-1">
                   Best For
                 </span>
