@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@500;600&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Instrument Serif", serif;
+  --font-sans: "Inter", sans-serif;
+  --font-cabin: "Cabin", sans-serif;
+
+  --color-background: #0A0613;
+  --color-secondary: #100820;
+  --color-primary: #7B39FC;
+  --color-primary-hover: #8B4FFF;
+  --color-foreground: #F5F3FF;
+  --color-muted: rgba(200, 195, 220, 0.7);
+
+  --color-glass-bg: rgba(30, 22, 54, 0.4);
+  --color-glass-border-subtle: rgba(164, 132, 215, 0.2);
+  --color-glass-border-accent: rgba(164, 132, 215, 0.5);
+  --color-purple-glow: rgba(123, 57, 252, 0.4);
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-[var(--color-glass-bg)] backdrop-blur-xl border border-[var(--color-glass-border-subtle)] shadow-[inset_0_1px_0_rgba(255,255,255,0.06)];
+  }
+  .glass-pill {
+    @apply bg-[var(--color-glass-bg)] backdrop-blur-xl border border-[var(--color-glass-border-subtle)] shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] rounded-full text-foreground px-4 py-2 text-sm font-cabin tracking-wider uppercase inline-flex items-center;
+  }
+  .btn-primary {
+    @apply rounded-xl bg-primary hover:bg-primary-hover text-white font-medium py-3 px-6 transition-all shadow-[0_0_24px_rgba(123,57,252,0.35)] flex items-center justify-center gap-2;
+  }
+  .btn-secondary {
+    @apply rounded-xl bg-[var(--color-glass-bg)] backdrop-blur-xl border border-[var(--color-glass-border-subtle)] shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] py-3 px-6 text-foreground hover:bg-[rgba(164,132,215,0.2)] transition-all font-medium flex items-center justify-center gap-2;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#C77DFF] to-[#E0AAFF];
+  }
+}
+
+.btn-hero-primary {
+  background: #7B39FC;
+  border: 1px solid rgba(164,132,215,0.5);
+  box-shadow: 0 0 20px rgba(123,57,252,0.6), 0 0 40px rgba(123,57,252,0.3), 0 0 2px rgba(164,132,215,0.8);
+  transition: all 0.3s ease;
+}
+.btn-hero-primary:hover {
+  filter: brightness(1.15);
+  box-shadow: 0 0 30px rgba(123,57,252,0.8), 0 0 60px rgba(123,57,252,0.4);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+}
