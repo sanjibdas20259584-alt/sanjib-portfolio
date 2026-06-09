@@ -11,6 +11,7 @@ import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
 import { AllWorksPage } from "./pages/AllWorksPage";
 import { PricingPage } from "./pages/PricingPage";
+import { SanjibDasPage } from "./pages/SanjibDasPage";
 import { AdminPage } from "./pages/AdminPage";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { trackEvent } from "./lib/analytics";
@@ -66,6 +67,7 @@ export default function App() {
         />
         <Route path="/works" element={<AllWorksPage />} />
         <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/sanjib-das" element={<SanjibDasPage />} />
         <Route path="/admin" element={<AdminPage />} />
       </Routes>
       {!isAdminRoute && <Footer />}
