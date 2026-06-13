@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { trackEvent } from "../lib/analytics";
 
 export const Navbar = () => {
@@ -19,12 +19,12 @@ export const Navbar = () => {
   }, []);
 
   const menuItems = [
-    { label: "Home", href: isHome ? "#" : "/" },
-    { label: "About Me", href: isHome ? "#about-me" : "/#about-me" },
-    { label: "Services", href: isHome ? "#services" : "/#services" },
-    { label: "My Works", href: isHome ? "#my-works" : "/#my-works" },
-    { label: "Pricing", href: "/pricing" },
-    { label: "Reach Out", href: isHome ? "#reach-out" : "/#reach-out" },
+    { label: "Home", href: isHome ? "#" : "/", isHash: !isHome },
+    { label: "About Sanjib Das", href: "/sanjib-das", isHash: false },
+    { label: "Services", href: isHome ? "#services" : "/#services", isHash: true },
+    { label: "My Works", href: isHome ? "#my-works" : "/#my-works", isHash: true },
+    { label: "Pricing", href: "/pricing", isHash: false },
+    { label: "Reach Out", href: isHome ? "#reach-out" : "/#reach-out", isHash: true },
   ];
 
   return (
@@ -58,22 +58,41 @@ export const Navbar = () => {
             >
               <div className="flex flex-col">
                 {menuItems.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    onClick={() => {
-                      setIsOpen(false);
-                      trackEvent({
-                        eventName: "nav_click",
-                        elementName: item.label,
-                        category: "navigation",
-                        metadata: { targetPath: item.href },
-                      });
-                    }}
-                    className="font-cabin text-[16px] text-white py-3 px-4 rounded-xl transition-all hover:bg-[rgba(164,132,215,0.2)] block w-full text-center tracking-wider"
-                  >
-                    {item.label}
-                  </a>
+                  item.isHash ? (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      onClick={() => {
+                        setIsOpen(false);
+                        trackEvent({
+                          eventName: "nav_click",
+                          elementName: item.label,
+                          category: "navigation",
+                          metadata: { targetPath: item.href },
+                        });
+                      }}
+                      className="font-cabin text-[16px] text-white py-3 px-4 rounded-xl transition-all hover:bg-[rgba(164,132,215,0.2)] block w-full text-center tracking-wider"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={item.label}
+                      to={item.href}
+                      onClick={() => {
+                        setIsOpen(false);
+                        trackEvent({
+                          eventName: "nav_click",
+                          elementName: item.label,
+                          category: "navigation",
+                          metadata: { targetPath: item.href },
+                        });
+                      }}
+                      className="font-cabin text-[16px] text-white py-3 px-4 rounded-xl transition-all hover:bg-[rgba(164,132,215,0.2)] block w-full text-center tracking-wider"
+                    >
+                      {item.label}
+                    </Link>
+                  )
                 ))}
               </div>
             </motion.div>

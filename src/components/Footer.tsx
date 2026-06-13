@@ -1,15 +1,25 @@
 import { Instagram, Linkedin, MessageCircle, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="w-full border-t border-[rgba(164,132,215,0.1)] py-10 md:py-16 flex flex-col items-center gap-6">
+    <footer className="w-full border-t border-[rgba(164,132,215,0.1)] py-10 md:py-16 flex flex-col items-center gap-6 px-6">
       <div className="font-serif text-[32px] text-foreground tracking-tight">Sanjib Das</div>
 
-      <p className="text-muted text-center text-sm md:text-base font-sans">
-        AI Ad Creative Specialist for D2C Brands · Kolkata
+      <p className="text-muted text-center text-sm md:text-base font-sans max-w-2xl leading-relaxed">
+        Sanjib Das Portfolio - Graphic designer and AI ads creator from Kolkata, India. Creating AI UGC ads, product creatives, YouTube thumbnails, and social media designs for brands, creators, and startups.
       </p>
+
+      {/* Crawlable Navigation Links */}
+      <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-sans text-muted my-2">
+        <Link to="/" className="hover:text-primary transition-colors">Sanjib Das Portfolio</Link>
+        <Link to="/sanjib-das" className="hover:text-primary transition-colors">About Sanjib Das</Link>
+        <Link to="/works" className="hover:text-primary transition-colors">Sanjib Das Works</Link>
+        <Link to="/pricing" className="hover:text-primary transition-colors">Sanjib Das Pricing</Link>
+        <a href="/#reach-out" className="hover:text-primary transition-colors">Contact Sanjib Das</a>
+      </div>
 
       <div className="flex items-center gap-4 my-2">
         {[

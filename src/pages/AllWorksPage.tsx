@@ -5,6 +5,7 @@ import { ExternalLink, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { MediaRenderer } from "../components/MediaRenderer";
 import { trackEvent } from "../lib/analytics";
+import { SEO } from "../components/SEO";
 
 export const AllWorksPage = () => {
   const [activeFilter, setActiveFilter] = useState<string>("All");
@@ -56,6 +57,47 @@ export const AllWorksPage = () => {
 
   return (
     <div className="w-full min-h-screen bg-background pt-[80px] md:pt-[100px] pb-12 md:pb-16 relative">
+      <SEO
+        title="Sanjib Das Works | AI Ads, Thumbnails & Product Creatives"
+        description="Explore Sanjib Das works: AI UGC ads, product ad creatives, YouTube thumbnails, product posts, and social media design portfolio."
+        canonical="https://sanjibdas.vercel.app/works"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebPage",
+              "@id": "https://sanjibdas.vercel.app/works#webpage",
+              "url": "https://sanjibdas.vercel.app/works",
+              "name": "Sanjib Das Works | AI Ads, Thumbnails & Product Creatives",
+              "description": "Explore Sanjib Das works: AI UGC ads, product ad creatives, YouTube thumbnails, product posts, and social media design portfolio.",
+              "breadcrumb": {
+                "@id": "https://sanjibdas.vercel.app/works#breadcrumb"
+              },
+              "about": {
+                "@id": "https://sanjibdas.vercel.app/#person"
+              }
+            },
+            {
+              "@type": "BreadcrumbList",
+              "@id": "https://sanjibdas.vercel.app/works#breadcrumb",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://sanjibdas.vercel.app/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Works",
+                  "item": "https://sanjibdas.vercel.app/works"
+                }
+              ]
+            }
+          ]
+        }}
+      />
       {/* Background aurora glow */}
       <div className="absolute top-0 right-0 w-full md:w-1/2 h-[500px] bg-[radial-gradient(ellipse_at_top_right,_var(--color-purple-glow)_0%,_transparent_70%)] opacity-30 blur-[80px] z-0 pointer-events-none" />
 
@@ -74,10 +116,13 @@ export const AllWorksPage = () => {
         <div className="flex flex-col items-center text-center space-y-3 md:space-y-4 mb-8 md:mb-12">
           <div className="glass-pill !text-[10px] !px-3 !py-1">PORTFOLIO</div>
           <h1 className="font-serif text-[36px] sm:text-[48px] md:text-[64px] leading-[1.1] sm:leading-[1.05] tracking-tight text-gradient">
-            All Works
+            Sanjib Das Works - AI Ads, Thumbnails and Product Creatives
           </h1>
           <p className="text-muted text-sm sm:text-base md:text-xl font-sans max-w-2xl px-2">
-            Demo/spec creatives showing ad direction, hooks, and product storytelling for D2C brands.
+            Explore Sanjib Das portfolio works including AI UGC ads, AI product ads, YouTube thumbnails, product posts, and social media design projects for D2C brands and creators.
+          </p>
+          <p className="text-muted/80 text-xs sm:text-sm font-sans max-w-2xl px-4 mt-2">
+            This portfolio shows AI ads, UGC-style ad concepts, product creatives, thumbnails, and social media designs created by Sanjib Das.
           </p>
         </div>
 

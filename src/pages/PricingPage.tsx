@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { Check, ArrowLeft, MessageSquare } from "lucide-react";
 import { Link } from "react-router-dom";
 import { trackEvent } from "../lib/analytics";
+import { SEO } from "../components/SEO";
 
 export const PricingPage = () => {
   const [activeFilter, setActiveFilter] = useState<string>("All");
@@ -27,6 +28,47 @@ export const PricingPage = () => {
 
   return (
     <div className="w-full min-h-screen bg-background pt-[80px] md:pt-[100px] pb-12 md:pb-16 relative">
+      <SEO
+        title="Sanjib Das Pricing | AI Ads, Thumbnails & Product Creatives"
+        description="View Sanjib Das pricing for AI ad creatives, AI UGC ads, YouTube thumbnails, product creatives, and social media design services in India."
+        canonical="https://sanjibdas.vercel.app/pricing"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebPage",
+              "@id": "https://sanjibdas.vercel.app/pricing#webpage",
+              "url": "https://sanjibdas.vercel.app/pricing",
+              "name": "Sanjib Das Pricing | AI Ads, Thumbnails & Product Creatives",
+              "description": "View Sanjib Das pricing for AI ad creatives, AI UGC ads, YouTube thumbnails, product creatives, and social media design services in India.",
+              "breadcrumb": {
+                "@id": "https://sanjibdas.vercel.app/pricing#breadcrumb"
+              },
+              "about": {
+                "@id": "https://sanjibdas.vercel.app/#person"
+              }
+            },
+            {
+              "@type": "BreadcrumbList",
+              "@id": "https://sanjibdas.vercel.app/pricing#breadcrumb",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://sanjibdas.vercel.app/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Pricing",
+                  "item": "https://sanjibdas.vercel.app/pricing"
+                }
+              ]
+            }
+          ]
+        }}
+      />
       {/* Background aurora glow */}
       <div className="absolute top-0 right-0 w-full md:w-1/2 h-[500px] bg-[radial-gradient(ellipse_at_top_right,_var(--color-purple-glow)_0%,_transparent_70%)] opacity-30 blur-[80px] z-0 pointer-events-none" />
 
@@ -45,10 +87,13 @@ export const PricingPage = () => {
         <div className="flex flex-col items-center text-center space-y-3 md:space-y-4 mb-4 md:mb-6">
           <div className="glass-pill !text-[10px] !px-3 !py-1">PRICING PLANS</div>
           <h1 className="font-serif text-[36px] sm:text-[48px] md:text-[64px] leading-[1.1] sm:leading-[1.05] tracking-tight text-gradient">
-            Pricing
+            Sanjib Das Pricing - AI Ads, Thumbnails and Product Creatives
           </h1>
           <p className="text-muted text-sm sm:text-base md:text-xl font-sans max-w-2xl px-2">
-            AI-assisted ad creatives for D2C jewellery, beauty, skincare, and fashion brands.
+            Pricing for AI-assisted ad creatives, AI UGC concepts, YouTube thumbnails, product posts, and design services by Sanjib Das.
+          </p>
+          <p className="text-muted/80 text-xs sm:text-sm font-sans max-w-2xl px-4 mt-2">
+            Explore competitive AI ad creative pricing India, AI UGC ad pricing India, YouTube thumbnail pricing India, product creative pricing India, and freelance design pricing Kolkata.
           </p>
           <p className="text-muted/70 text-xs sm:text-sm font-sans">
             International payment available on request.

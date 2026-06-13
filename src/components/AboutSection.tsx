@@ -18,18 +18,18 @@ export const AboutSection = () => {
         transition={{ duration: 0.6 }}
         className="flex flex-col items-center text-center space-y-6 max-w-3xl"
       >
-        <div className="glass-pill">ABOUT ME</div>
+        <div className="glass-pill">ABOUT SANJIB DAS</div>
 
         <h2 className="font-serif text-[48px] md:text-[56px] leading-[1.05] tracking-tight">
-          The person behind the <span className="italic text-gradient">creatives</span>
+          About <span className="italic text-gradient">Sanjib Das</span>
         </h2>
 
         <div className="space-y-5 text-muted text-lg md:text-xl font-sans text-left md:text-center mt-6">
           <p>
-            I create AI-assisted ad creatives and UGC-style concepts for D2C brands. My focus is product hooks, ad angles, short-form content, and fast creative testing for jewellery, beauty, skincare, and fashion brands.
+            I’m Sanjib Das, a graphic designer and AI creative maker from Kolkata, India. I create AI UGC ads, product creatives, YouTube thumbnails, social media posts, and promotional visuals for brands, creators, and startups.
           </p>
           <p>
-            I use AI tools combined with creative direction to help brands generate multiple ad angles quickly — so they can test what works without expensive shoots or long turnaround times.
+            My work focuses on helping small brands and D2C businesses explain their products faster, test stronger ad angles, and improve their online creative quality.
           </p>
         </div>
 

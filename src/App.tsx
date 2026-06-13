@@ -17,6 +17,7 @@ import { SanjibDasPage } from "./pages/SanjibDasPage";
 import { AdminPage } from "./pages/AdminPage";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { trackEvent } from "./lib/analytics";
+import { SEO } from "./components/SEO";
 
 export default function App() {
   const location = useLocation();
@@ -56,6 +57,55 @@ export default function App() {
           path="/"
           element={
             <>
+              <SEO
+                title="Sanjib Das Portfolio | Graphic Designer & AI Ads Creator"
+                description="Sanjib Das is a graphic designer and AI ads creator from Kolkata, India. Explore AI UGC ads, product creatives, YouTube thumbnails, and social media designs."
+                canonical="https://sanjibdas.vercel.app/"
+                jsonLd={{
+                  "@context": "https://schema.org",
+                  "@graph": [
+                    {
+                      "@type": "Person",
+                      "@id": "https://sanjibdas.vercel.app/#person",
+                      "name": "Sanjib Das",
+                      "url": "https://sanjibdas.vercel.app/",
+                      "jobTitle": "Graphic Designer and AI Ads Creator",
+                      "description": "Sanjib Das is a graphic designer and AI ads creator from Kolkata, India. He creates AI UGC ads, product creatives, YouTube thumbnails, and social media designs.",
+                      "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Kolkata",
+                        "addressRegion": "West Bengal",
+                        "addressCountry": "India"
+                      },
+                      "sameAs": [
+                        "https://github.com/snjibz"
+                      ]
+                    },
+                    {
+                      "@type": "WebSite",
+                      "@id": "https://sanjibdas.vercel.app/#website",
+                      "name": "Sanjib Das Portfolio",
+                      "url": "https://sanjibdas.vercel.app/",
+                      "publisher": {
+                        "@id": "https://sanjibdas.vercel.app/#person"
+                      }
+                    },
+                    {
+                      "@type": "WebPage",
+                      "@id": "https://sanjibdas.vercel.app/#webpage",
+                      "name": "Sanjib Das Portfolio | Graphic Designer & AI Ads Creator",
+                      "url": "https://sanjibdas.vercel.app/",
+                      "description": "Sanjib Das portfolio featuring AI UGC ads, product creatives, YouTube thumbnails, and social media designs.",
+                      "isPartOf": {
+                        "@id": "https://sanjibdas.vercel.app/#website"
+                      },
+                      "about": {
+                        "@id": "https://sanjibdas.vercel.app/#person"
+                      }
+                    }
+                  ]
+                }}
+              />
               <HeroSection />
               <AboutSection />
               <ServicesSection />

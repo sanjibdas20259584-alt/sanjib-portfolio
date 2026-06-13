@@ -91,7 +91,7 @@ export const MediaRenderer: React.FC<MediaRendererProps> = ({
             {work.thumbnailUrl && (
               <img
                 src={work.thumbnailUrl}
-                alt={work.title}
+                alt={`${work.title} - ${work.category} by Sanjib Das`}
                 className="absolute inset-0 w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
               />
             )}
@@ -118,7 +118,7 @@ export const MediaRenderer: React.FC<MediaRendererProps> = ({
         <>
           <img
             src={work.image || work.imageUrl || work.url}
-            alt={work.title}
+            alt={`${work.title} - ${work.category} by Sanjib Das`}
             className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${objectFitClass}`}
           />
           {work.objectFit !== "contain" && (

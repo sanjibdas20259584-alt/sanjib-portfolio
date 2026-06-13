@@ -90,29 +90,29 @@ export const HeroSection = () => {
 
         {/* Small label */}
         <div className="font-cabin tracking-widest text-[10px] sm:text-xs md:text-sm text-primary uppercase font-semibold">
-          HI, I'M SANJIB DAS
+          HI, I’M SANJIB DAS
         </div>
 
         {/* Headline */}
         <h1 className="font-serif text-[34px] sm:text-[44px] md:text-[80px] lg:text-[96px] leading-[1.1] sm:leading-[1.05] tracking-[-0.02em] text-foreground max-w-5xl mx-auto">
-          AI-assisted ad creatives for D2C brands that need better{" "}
-          <span className="italic text-gradient">content to test</span>.
+          Sanjib Das Portfolio: AI ads and scroll-stopping{" "}
+          <span className="italic text-gradient">creatives for brands</span>
         </h1>
 
         {/* Subtext */}
         <p className="font-sans text-sm sm:text-base md:text-xl text-muted max-w-2xl mx-auto font-medium px-2">
-          I help jewellery, beauty, skincare, and fashion brands create short product ads, UGC-style concepts, hooks, and scroll-stopping creatives for Instagram/Reels and Meta ads.
+          I’m Sanjib Das, a graphic designer and AI ads creator from Kolkata, India. I help small brands, creators, and startups with AI UGC ads, product creatives, YouTube thumbnails, social media posts, and promotional visuals.
         </p>
 
         {/* Trust line */}
         <div className="flex flex-wrap justify-center gap-2 md:gap-3 text-[10px] sm:text-xs md:text-sm text-muted/80 font-cabin tracking-wider uppercase">
-          <span>AI Product Ads</span>
+          <span>AI Ads</span>
           <span className="text-primary">·</span>
-          <span>UGC-style Creatives</span>
+          <span>AI UGC Concepts</span>
           <span className="text-primary">·</span>
-          <span>Hook Testing</span>
+          <span>YouTube Thumbnails</span>
           <span className="text-primary">·</span>
-          <span>D2C Brands</span>
+          <span>Product Creatives</span>
         </div>
 
         {/* CTA buttons */}
@@ -144,7 +144,7 @@ export const HeroSection = () => {
               backdropFilter: "blur(12px)",
               boxShadow: "none",
             }}
-            aria-label="Get 2 free ad angles from Sanjib Das"
+            aria-label="Request a free creative sample from Sanjib Das"
           >
             Get 2 Free Ad Angles
           </a>
