@@ -1,26 +1,26 @@
-import { Clock, Eye, Sparkles, Gift } from "lucide-react";
+import { Target, Rocket, Sparkles, Lightbulb } from "lucide-react";
 import { motion } from "motion/react";
 
 const trustCards = [
   {
-    icon: Clock,
-    title: "Fast Delivery",
-    description: "Most simple creatives can be delivered within 24–48 hours.",
+    icon: Target,
+    title: "Built for Ad Testing",
+    description: "Every creative is designed to test hooks, angles, and formats — so you can find what works for your brand.",
   },
   {
-    icon: Eye,
-    title: "Made for Online Attention",
-    description: "Every creative is designed for scroll-stopping social feeds, thumbnails, ads, and product pages.",
+    icon: Rocket,
+    title: "Fast Trial Delivery",
+    description: "48-hour delivery on trial ads so you can quickly test quality before committing to a bigger package.",
   },
   {
     icon: Sparkles,
-    title: "AI + Design Thinking",
-    description: "I combine AI tools with human design judgment — layout, copy, and brand clarity.",
+    title: "AI + Human Creative Direction",
+    description: "I combine AI tools with human judgment for layout, copy clarity, and brand feel.",
   },
   {
-    icon: Gift,
-    title: "Free Sample Option",
-    description: "Not sure yet? Request a small free sample idea before starting.",
+    icon: Lightbulb,
+    title: "Clear Hooks & Product Angles",
+    description: "Each creative comes with clear hooks and product angles so you know what you're testing.",
   },
 ];
 
@@ -41,7 +41,7 @@ export const TrustSection = () => {
         </h2>
 
         <p className="text-muted text-lg md:text-xl font-sans max-w-2xl">
-          Fast turnaround, clear communication, and creatives built for real results.
+          Fast turnaround, clear communication, and creatives built for testing and learning.
         </p>
       </motion.div>
 
@@ -70,18 +70,6 @@ export const TrustSection = () => {
           );
         })}
       </div>
-
-      {/* Testimonial placeholder */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-        className="mt-12 glass-card rounded-full px-6 py-3 text-xs text-muted/80 font-sans flex items-center gap-2"
-      >
-        <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
-        Client feedback coming soon — real testimonials will be added as they come in.
-      </motion.div>
     </section>
   );
 };

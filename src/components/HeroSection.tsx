@@ -1,9 +1,10 @@
+import { MessageCircle, Zap, Video, Target, Package, Play } from "lucide-react";
 import { motion } from "motion/react";
 import { trackEvent } from "../lib/analytics";
 
 export const HeroSection = () => {
-  const freeSampleWhatsApp = `https://wa.me/918100146879?text=${encodeURIComponent(
-    "Hi Sanjib, I want a free sample creative idea for my brand. Here is my website/Instagram/product link:"
+  const freeAnglesWhatsApp = `https://wa.me/918100146879?text=${encodeURIComponent(
+    "Hi Sanjib, I want 2 free ad angles for my brand. Here is my website/Instagram/product link:"
   )}`;
 
   return (
@@ -94,24 +95,24 @@ export const HeroSection = () => {
 
         {/* Headline */}
         <h1 className="font-serif text-[34px] sm:text-[44px] md:text-[80px] lg:text-[96px] leading-[1.1] sm:leading-[1.05] tracking-[-0.02em] text-foreground max-w-5xl mx-auto">
-          Sanjib Das Portfolio: AI ads and scroll-stopping creatives for brands that need better content{" "}
-          <span className="italic text-gradient">fast</span>.
+          AI-assisted ad creatives for D2C brands that need better{" "}
+          <span className="italic text-gradient">content to test</span>.
         </h1>
 
         {/* Subtext */}
         <p className="font-sans text-sm sm:text-base md:text-xl text-muted max-w-2xl mx-auto font-medium px-2">
-          I’m Sanjib Das, a graphic designer and AI ads creator from Kolkata, India. I help small brands, creators, and startups with AI UGC ads, product creatives, YouTube thumbnails, social media posts, and promotional visuals.
+          I help jewellery, beauty, skincare, and fashion brands create short product ads, UGC-style concepts, hooks, and scroll-stopping creatives for Instagram/Reels and Meta ads.
         </p>
 
         {/* Trust line */}
         <div className="flex flex-wrap justify-center gap-2 md:gap-3 text-[10px] sm:text-xs md:text-sm text-muted/80 font-cabin tracking-wider uppercase">
-          <span>AI Ads</span>
+          <span>AI Product Ads</span>
           <span className="text-primary">·</span>
-          <span>UGC Concepts</span>
+          <span>UGC-style Creatives</span>
           <span className="text-primary">·</span>
-          <span>YouTube Thumbnails</span>
+          <span>Hook Testing</span>
           <span className="text-primary">·</span>
-          <span>Product Creatives</span>
+          <span>D2C Brands</span>
         </div>
 
         {/* CTA buttons */}
@@ -121,17 +122,18 @@ export const HeroSection = () => {
             className="btn-hero-primary w-full rounded-2xl text-white font-medium py-3 sm:py-4 px-6 flex items-center justify-center text-sm sm:text-base md:text-lg text-center"
             aria-label="View Sanjib Das portfolio works"
           >
-            View My Work
+            <Play size={18} className="mr-2" />
+            View Ad Work
           </a>
 
           <a
-            href={freeSampleWhatsApp}
+            href={freeAnglesWhatsApp}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() =>
               trackEvent({
                 eventName: "whatsapp_click",
-                elementName: "hero_free_sample",
+                elementName: "hero_free_angles",
                 category: "conversion",
               })
             }
@@ -142,9 +144,9 @@ export const HeroSection = () => {
               backdropFilter: "blur(12px)",
               boxShadow: "none",
             }}
-            aria-label="Request a free creative sample from Sanjib Das"
+            aria-label="Get 2 free ad angles from Sanjib Das"
           >
-            Request a Free Sample
+            Get 2 Free Ad Angles
           </a>
         </div>
 

@@ -9,7 +9,7 @@ export const PricingPage = () => {
   const [activeFilter, setActiveFilter] = useState<string>("All");
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const categories = ["All", "AI Ads", "AI UGC Ads", "Graphic Design", "Brand Identity", "Bundles"];
+  const categories = ["All", "Core AI Ad Creatives", "Additional Design Services"];
 
   // Scroll to top on page mount and track scrolling
   useEffect(() => {
@@ -22,11 +22,8 @@ export const PricingPage = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const showGraphicDesign = activeFilter === "All" || activeFilter === "Graphic Design";
-  const showAIAds = activeFilter === "All" || activeFilter === "AI Ads";
-  const showAIUGCAds = activeFilter === "All" || activeFilter === "AI UGC Ads";
-  const showBrandIdentity = activeFilter === "All" || activeFilter === "Brand Identity";
-  const showBundles = activeFilter === "All" || activeFilter === "Bundles";
+  const showCorePackages = activeFilter === "All" || activeFilter === "Core AI Ad Creatives";
+  const showAdditional = activeFilter === "All" || activeFilter === "Additional Design Services";
 
   return (
     <div className="w-full min-h-screen bg-background pt-[80px] md:pt-[100px] pb-12 md:pb-16 relative">
@@ -36,8 +33,8 @@ export const PricingPage = () => {
       <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 relative z-10">
         {/* Back Link */}
         <div className="mb-6 md:mb-8">
-          <Link 
-            to="/#my-works" 
+          <Link
+            to="/#my-works"
             className="inline-flex items-center gap-2 text-muted hover:text-white transition-colors font-sans text-xs sm:text-sm"
           >
             <ArrowLeft size={14} /> Back to Portfolio
@@ -51,7 +48,10 @@ export const PricingPage = () => {
             Pricing
           </h1>
           <p className="text-muted text-sm sm:text-base md:text-xl font-sans max-w-2xl px-2">
-            Simple, flexible pricing for design, AI ads, UGC-style creatives, and brand identity work.
+            AI-assisted ad creatives for D2C jewellery, beauty, skincare, and fashion brands.
+          </p>
+          <p className="text-muted/70 text-xs sm:text-sm font-sans">
+            International payment available on request.
           </p>
         </div>
 
@@ -60,7 +60,7 @@ export const PricingPage = () => {
           <div className="glass-card px-4 py-2 sm:px-5 sm:py-2.5 rounded-2xl sm:rounded-full text-[11px] sm:text-xs text-muted/90 font-sans max-w-2xl text-center border-[rgba(164,132,215,0.15)] flex items-center gap-2 shadow-[0_0_15px_rgba(123,57,252,0.02)]">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse shrink-0" />
             <span>
-              Final pricing may vary based on project complexity, revisions, delivery time, and the number of creatives required.
+              Paid trial is designed for first-time brands that want to test quality before a bigger creative pack.
             </span>
           </div>
           <span className="text-[10px] sm:text-xs text-muted/60 font-sans italic">
@@ -69,10 +69,10 @@ export const PricingPage = () => {
         </div>
 
         {/* Category Filters (Sticky Scroll-Reactive Container) */}
-        <div 
+        <div
           className={`flex w-full overflow-x-auto hide-scrollbar justify-start md:justify-center gap-2 mb-8 md:mb-12 pb-2 transition-all duration-300 ease-in-out ${
-            isScrolled 
-              ? 'sticky top-3 z-50 bg-[rgba(30,22,54,0.85)] backdrop-blur-[24px] border border-[rgba(164,132,215,0.45)] shadow-[0_8px_32px_rgba(0,0,0,0.4)] py-2 px-3 rounded-full max-w-[calc(100vw-2rem)] md:max-w-max mx-auto' 
+            isScrolled
+              ? 'sticky top-3 z-50 bg-[rgba(30,22,54,0.85)] backdrop-blur-[24px] border border-[rgba(164,132,215,0.45)] shadow-[0_8px_32px_rgba(0,0,0,0.4)] py-2 px-3 rounded-full max-w-[calc(100vw-2rem)] md:max-w-max mx-auto'
               : 'sticky top-4 md:top-[75px] z-40 bg-[rgba(9, 9, 15, 0.8)] backdrop-blur-[12px] border border-[rgba(164,132,215,0.1)] py-2 px-3 rounded-full w-full'
           }`}
         >
@@ -90,8 +90,8 @@ export const PricingPage = () => {
                 });
               }}
               className={`shrink-0 rounded-full px-4 py-2 text-[10px] md:text-xs font-cabin tracking-widest font-bold uppercase transition-all ${
-                activeFilter === cat 
-                  ? 'bg-primary text-white shadow-[0_0_15px_rgba(123,57,252,0.4)] border border-primary' 
+                activeFilter === cat
+                  ? 'bg-primary text-white shadow-[0_0_15px_rgba(123,57,252,0.4)] border border-primary'
                   : 'glass-card text-muted hover:text-white'
               }`}
             >
@@ -102,10 +102,10 @@ export const PricingPage = () => {
 
         {/* Structured Sections */}
         <div className="space-y-12 md:space-y-24 mt-10 md:mt-16 max-w-6xl mx-auto relative z-10">
-          
-          {/* 1. AI ADS SECTION */}
-          {showAIAds && (
-            <motion.div 
+
+          {/* 1. CORE AI AD CREATIVES SECTION */}
+          {showCorePackages && (
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -114,15 +114,15 @@ export const PricingPage = () => {
             >
               <div className="border-b border-[rgba(164,132,215,0.15)] pb-5">
                 <h2 className="font-serif text-3xl md:text-4xl text-foreground font-semibold mb-2">
-                  AI Ads
+                  AI Ad Creatives
                 </h2>
                 <p className="text-muted text-sm sm:text-base font-sans">
-                  AI-generated ad creatives, product visuals, and campaign concepts built for modern brands.
+                  AI-assisted product ads, UGC-style concepts, and creative packs for D2C brands.
                 </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                 {pricingPackages
-                  .filter((p) => p.category === "AI Ads")
+                  .filter((p) => p.category === "Core AI Ad Creatives")
                   .map((pkg) => (
                     <PricingCard key={pkg.id} pkg={pkg} />
                   ))}
@@ -130,36 +130,9 @@ export const PricingPage = () => {
             </motion.div>
           )}
 
-          {/* 2. AI UGC ADS SECTION */}
-          {showAIUGCAds && (
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5 }}
-              className="space-y-8 text-left"
-            >
-              <div className="border-b border-[rgba(164,132,215,0.15)] pb-5">
-                <h2 className="font-serif text-3xl md:text-4xl text-foreground font-semibold mb-2">
-                  AI UGC Ads
-                </h2>
-                <p className="text-muted text-sm sm:text-base font-sans">
-                  UGC-style AI video concepts, hooks, scripts, and scene-by-scene prompts for ad campaigns.
-                </p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                {pricingPackages
-                  .filter((p) => p.category === "AI UGC Ads")
-                  .map((pkg) => (
-                    <PricingCard key={pkg.id} pkg={pkg} />
-                  ))}
-              </div>
-            </motion.div>
-          )}
-
-          {/* 3. GRAPHIC DESIGN SECTION */}
-          {showGraphicDesign && (
-            <motion.div 
+          {/* 2. ADDITIONAL DESIGN SERVICES SECTION */}
+          {showAdditional && (
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -168,10 +141,10 @@ export const PricingPage = () => {
             >
               <div className="border-b border-[rgba(164,132,215,0.15)] pb-5 text-left">
                 <h2 className="font-serif text-3xl md:text-4xl text-foreground font-semibold mb-2">
-                  Graphic Design
+                  Additional Design Services
                 </h2>
                 <p className="text-muted text-sm sm:text-base font-sans">
-                  High-quality visual design services for creators, brands, and businesses.
+                  Thumbnails, posters, product posts, and brand identity for brands that need broader design support.
                 </p>
               </div>
 
@@ -182,7 +155,7 @@ export const PricingPage = () => {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                   {pricingPackages
-                    .filter((p) => p.category === "Graphic Design" && p.subcategory === "YouTube Thumbnail Design")
+                    .filter((p) => p.category === "Additional Design Services" && p.subcategory === "YouTube Thumbnail Design")
                     .map((pkg) => (
                       <PricingCard key={pkg.id} pkg={pkg} />
                     ))}
@@ -196,7 +169,7 @@ export const PricingPage = () => {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                   {pricingPackages
-                    .filter((p) => p.category === "Graphic Design" && p.subcategory === "Poster Design")
+                    .filter((p) => p.category === "Additional Design Services" && p.subcategory === "Poster Design")
                     .map((pkg) => (
                       <PricingCard key={pkg.id} pkg={pkg} />
                     ))}
@@ -210,7 +183,21 @@ export const PricingPage = () => {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                   {pricingPackages
-                    .filter((p) => p.category === "Graphic Design" && p.subcategory === "Product Post Design")
+                    .filter((p) => p.category === "Additional Design Services" && p.subcategory === "Product Post Design")
+                    .map((pkg) => (
+                      <PricingCard key={pkg.id} pkg={pkg} />
+                    ))}
+                </div>
+              </div>
+
+              {/* Subsection: Brand Identity */}
+              <div className="space-y-6 text-left">
+                <h3 className="font-sans text-xl md:text-2xl text-primary font-medium tracking-wide border-l-2 border-primary pl-3">
+                  Brand Identity
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                  {pricingPackages
+                    .filter((p) => p.category === "Additional Design Services" && p.subcategory === "Brand Identity")
                     .map((pkg) => (
                       <PricingCard key={pkg.id} pkg={pkg} />
                     ))}
@@ -219,64 +206,10 @@ export const PricingPage = () => {
             </motion.div>
           )}
 
-          {/* 4. BRAND IDENTITY SECTION */}
-          {showBrandIdentity && (
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5 }}
-              className="space-y-8 text-left"
-            >
-              <div className="border-b border-[rgba(164,132,215,0.15)] pb-5">
-                <h2 className="font-serif text-3xl md:text-4xl text-foreground font-semibold mb-2">
-                  Brand Identity
-                </h2>
-                <p className="text-muted text-sm sm:text-base font-sans">
-                  Logo systems, color palettes, typeface selection, and brand design guides for a polished identity.
-                </p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                {pricingPackages
-                  .filter((p) => p.category === "Brand Identity")
-                  .map((pkg) => (
-                    <PricingCard key={pkg.id} pkg={pkg} />
-                  ))}
-              </div>
-            </motion.div>
-          )}
-
-          {/* 5. BUNDLES SECTION */}
-          {showBundles && (
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5 }}
-              className="space-y-8 text-left"
-            >
-              <div className="border-b border-[rgba(164,132,215,0.15)] pb-5">
-                <h2 className="font-serif text-3xl md:text-4xl text-foreground font-semibold mb-2">
-                  Bundles
-                </h2>
-                <p className="text-muted text-sm sm:text-base font-sans">
-                  Combined packages for brands that need multiple creatives, ads, and design assets together.
-                </p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                {pricingPackages
-                  .filter((p) => p.category === "Bundles")
-                  .map((pkg) => (
-                    <PricingCard key={pkg.id} pkg={pkg} />
-                  ))}
-              </div>
-            </motion.div>
-          )}
-
         </div>
 
         {/* Custom Package CTA at the bottom */}
-        <motion.div 
+        <motion.div
           layout
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -288,12 +221,12 @@ export const PricingPage = () => {
           <div className="space-y-4 max-w-xl relative z-10">
             <h2 className="font-serif text-3xl md:text-4xl text-foreground font-semibold">Need a custom package?</h2>
             <p className="text-muted text-sm sm:text-base leading-relaxed font-sans">
-              If your project does not fit into these packages, I can create a custom plan based on your brand, content needs, and budget.
+              If your project does not fit these packages, I can create a custom plan based on your brand, content needs, and budget.
             </p>
           </div>
           <div className="relative z-10 shrink-0 w-full md:w-auto">
-            <Link 
-              to="/#reach-out" 
+            <Link
+              to="/#reach-out"
               className="btn-primary py-3 px-8 text-base text-center w-full md:w-auto block shadow-lg hover:brightness-110"
             >
               Contact Me
@@ -307,20 +240,22 @@ export const PricingPage = () => {
 
 const PricingCard: React.FC<{ pkg: PricingPackage }> = ({ pkg }) => {
   // Construct pre-filled WhatsApp message URL
-  const prefilledMsg = `Hi Sanjib, I’m interested in the ${pkg.title} package from your portfolio.
+  const prefilledMsg = `Hi Sanjib, I'm interested in the ${pkg.title} package.
 
 My brand/business name:
-Service I need:
-Project details:
+Website/Instagram link:
+Product to promote:
+Goal: sales / awareness / engagement
+Package interested in: ${pkg.title}
 Deadline:
 Budget:
 Can we discuss this?`;
   const whatsappUrl = `https://wa.me/918100146879?text=${encodeURIComponent(prefilledMsg)}`;
 
-  // Parse price into components to format currency neatly
-  const priceParts = pkg.price.split(' ');
-  const mainPrice = priceParts[0]; // e.g. "₹699" or "₹2,499"
-  const priceUnit = priceParts.slice(1).join(' '); // e.g. "per thumbnail" or "for 5 thumbnails"
+  // Parse price into components - handle both "₹699 per thumbnail" and "₹7,999/month" formats
+  const priceMatch = pkg.price.match(/^([^/]+)(\/.*)?$/);
+  const mainPrice = priceMatch?.[1] || pkg.price.split(' ')[0]; // e.g. "₹699" or "₹7,999"
+  const priceUnit = priceMatch?.[2] || pkg.price.split(' ').slice(1).join(' '); // e.g. "/month" or "per thumbnail"
 
   return (
     <motion.div
@@ -329,15 +264,19 @@ Can we discuss this?`;
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.3 }}
       className={`relative rounded-[1.5rem] md:rounded-[2rem] p-5 sm:p-6 md:p-8 flex flex-col items-start text-left transition-all duration-300 h-auto md:h-full ${
-        pkg.isPopular 
-          ? 'bg-[#181131] border border-[rgba(164,132,215,0.6)] shadow-[0_0_40px_rgba(123,57,252,0.15)] shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] pt-12 hover:border-primary hover:bg-[#1f163d]' 
+        pkg.isPopular
+          ? 'bg-[#181131] border border-[rgba(164,132,215,0.6)] shadow-[0_0_40px_rgba(123,57,252,0.15)] shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] pt-12 hover:border-primary hover:bg-[#1f163d]'
           : 'glass-card hover:border-primary/50 hover:bg-[rgba(164,132,215,0.05)]'
       }`}
     >
-      {/* Most Popular Badge */}
-      {pkg.isPopular && (
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] md:text-xs font-cabin tracking-widest font-bold uppercase py-2 px-4 rounded-full shadow-[0_0_15px_rgba(123,57,252,0.5)] whitespace-nowrap z-20">
-          Most Popular
+      {/* Badge */}
+      {pkg.badge && (
+        <div className={`absolute -top-4 left-1/2 -translate-x-1/2 text-white text-[10px] md:text-xs font-cabin tracking-widest font-bold uppercase py-2 px-4 rounded-full shadow-[0_0_15px_rgba(123,57,252,0.5)] whitespace-nowrap z-20 ${
+          pkg.badgeType === 'popular' ? 'bg-primary' :
+          pkg.badgeType === 'monthly' ? 'bg-[#2563eb]' :
+          'bg-[rgba(164,132,215,0.6)]'
+        }`}>
+          {pkg.badge}
         </div>
       )}
 
@@ -352,10 +291,10 @@ Can we discuss this?`;
       </h3>
 
       {/* Price */}
-      <div className="flex items-baseline gap-1.5 mb-3 md:mb-4 shrink-0">
-        <span className="font-serif text-2xl sm:text-3xl md:text-4xl text-foreground font-bold">{mainPrice}</span>
+      <div className="flex flex-wrap items-baseline justify-center gap-x-1 gap-y-0 mb-3 md:mb-4 min-w-0">
+        <span className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-foreground font-bold leading-none">{mainPrice}</span>
         {priceUnit && (
-          <span className="text-muted text-[10px] sm:text-xs md:text-sm font-sans">{priceUnit}</span>
+          <span className="text-muted text-xs sm:text-sm md:text-base font-sans shrink-0">{priceUnit}</span>
         )}
       </div>
 

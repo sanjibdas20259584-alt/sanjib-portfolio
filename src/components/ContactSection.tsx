@@ -13,11 +13,11 @@ const IconMap: Record<string, any> = {
 };
 
 const serviceOptions = [
-  "AI Ad Creative",
-  "AI UGC Concept",
-  "YouTube Thumbnail",
-  "Social Media Post",
-  "Brand Identity",
+  "Paid Trial Ad",
+  "AI Product Ad Pack",
+  "AI UGC-style Ad Pack",
+  "Monthly Creative Testing",
+  "Jewellery/Beauty Ad Creatives",
   "Other",
 ];
 
@@ -76,7 +76,7 @@ export const ContactSection = () => {
 
   return (
     <section id="reach-out" className="w-full max-w-7xl mx-auto px-5 sm:px-6 md:px-8 pt-12 md:pt-16 pb-12 md:pb-16">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
@@ -84,22 +84,22 @@ export const ContactSection = () => {
         className="flex flex-col items-center text-center space-y-4 md:space-y-6 max-w-3xl mx-auto mb-10 md:mb-16"
       >
         <div className="glass-pill">GET IN TOUCH</div>
-        
+
         <h2 className="font-serif text-[34px] sm:text-[44px] md:text-[56px] leading-[1.1] sm:leading-[1.05] tracking-tight">
-          Let's work <span className="italic text-gradient">together</span>
+          Let's create ad creatives for your <span className="italic text-gradient">product</span>
         </h2>
-        
+
         <p className="text-muted text-sm sm:text-base md:text-xl font-sans max-w-2xl px-2">
-          Got a project in mind? Reach out and let's create something that stands out.
+          Send your brand link, product to promote, and the type of ad creatives you need.
         </p>
 
         <p className="text-muted/80 text-xs sm:text-sm font-sans max-w-xl px-2">
-          Best way to reach me: WhatsApp or Email. Share your brand link, service needed, deadline, and budget.
+          Best way to reach me: WhatsApp or Email.
         </p>
       </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 max-w-5xl mx-auto">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -109,14 +109,14 @@ export const ContactSection = () => {
           <div className="font-cabin text-xs sm:text-sm uppercase tracking-wider text-muted font-bold mb-1 sm:mb-2">
             REACH ME DIRECTLY
           </div>
-          
+
           <div className="flex flex-col gap-3 sm:gap-4">
             {contactLinks.map((link) => {
               const Icon = IconMap[link.icon];
               const isWhatsApp = link.name === "WhatsApp";
               return (
-                <a 
-                  key={link.name} 
+                <a
+                  key={link.name}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -150,7 +150,7 @@ export const ContactSection = () => {
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -158,7 +158,7 @@ export const ContactSection = () => {
           className="glass-card rounded-[2rem] p-5 sm:p-8 md:p-10 flex flex-col gap-4 sm:gap-6 min-h-[380px] justify-center"
         >
           {status === "success" ? (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               className="flex flex-col items-center text-center space-y-4 sm:space-y-6"
@@ -170,7 +170,7 @@ export const ContactSection = () => {
               <p className="text-muted text-xs sm:text-sm sm:text-base leading-relaxed max-w-sm">
                 Thank you for reaching out. I will contact you soon about your project.
               </p>
-              <button 
+              <button
                 onClick={resetForm}
                 className="btn-secondary py-2 px-5 sm:py-2.5 sm:px-6 rounded-xl text-xs sm:text-sm transition-colors hover:bg-[rgba(164,132,215,0.2)] mt-1 sm:mt-2"
               >
@@ -178,7 +178,7 @@ export const ContactSection = () => {
               </button>
             </motion.div>
           ) : status === "error" ? (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               className="flex flex-col items-center text-center space-y-4 sm:space-y-6"
@@ -191,13 +191,13 @@ export const ContactSection = () => {
                 Please try again or contact me directly on WhatsApp.
               </p>
               <div className="flex gap-2.5 sm:gap-3">
-                <button 
+                <button
                   onClick={resetForm}
                   className="btn-secondary py-2 px-4 sm:py-2.5 sm:px-6 rounded-xl text-xs sm:text-sm"
                 >
                   Try Again
                 </button>
-                <a 
+                <a
                   href="https://wa.me/918100146879"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -211,11 +211,11 @@ export const ContactSection = () => {
             <form className="flex flex-col gap-4 sm:gap-5" onSubmit={handleSubmit}>
               <div className="flex flex-col gap-1.5 text-left">
                 <label htmlFor="name" className="font-cabin text-xs uppercase tracking-wider text-muted font-bold">NAME</label>
-                <input 
-                  type="text" 
-                  id="name" 
+                <input
+                  type="text"
+                  id="name"
                   required
-                  placeholder="Your name" 
+                  placeholder="Your name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full bg-[rgba(30,22,54,0.4)] border border-[rgba(164,132,215,0.2)] rounded-lg px-3 py-2.5 sm:py-3 text-sm text-foreground placeholder-muted outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
@@ -224,11 +224,11 @@ export const ContactSection = () => {
 
               <div className="flex flex-col gap-1.5 text-left">
                 <label htmlFor="email" className="font-cabin text-xs uppercase tracking-wider text-muted font-bold">EMAIL</label>
-                <input 
-                  type="email" 
-                  id="email" 
+                <input
+                  type="email"
+                  id="email"
                   required
-                  placeholder="your@email.com" 
+                  placeholder="your@email.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full bg-[rgba(30,22,54,0.4)] border border-[rgba(164,132,215,0.2)] rounded-lg px-3 py-2.5 sm:py-3 text-sm text-foreground placeholder-muted outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
@@ -237,22 +237,22 @@ export const ContactSection = () => {
 
               <div className="flex flex-col gap-1.5 text-left">
                 <label htmlFor="phone" className="font-cabin text-xs uppercase tracking-wider text-muted font-bold">PHONE / WHATSAPP</label>
-                <input 
-                  type="tel" 
-                  id="phone" 
-                  placeholder="+91 XXXXX XXXXX" 
+                <input
+                  type="tel"
+                  id="phone"
+                  placeholder="+91 XXXXX XXXXX"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   className="w-full bg-[rgba(30,22,54,0.4)] border border-[rgba(164,132,215,0.2)] rounded-lg px-3 py-2.5 sm:py-3 text-sm text-foreground placeholder-muted outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
                 />
               </div>
-              
+
               <div className="flex flex-col gap-1.5 text-left">
                 <label htmlFor="brand" className="font-cabin text-xs uppercase tracking-wider text-muted font-bold">BRAND / BUSINESS NAME</label>
-                <input 
-                  type="text" 
-                  id="brand" 
-                  placeholder="Your brand or business name" 
+                <input
+                  type="text"
+                  id="brand"
+                  placeholder="Your brand or business name"
                   value={formData.brand}
                   onChange={(e) => setFormData({ ...formData, brand: e.target.value })}
                   className="w-full bg-[rgba(30,22,54,0.4)] border border-[rgba(164,132,215,0.2)] rounded-lg px-3 py-2.5 sm:py-3 text-sm text-foreground placeholder-muted outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
@@ -261,8 +261,8 @@ export const ContactSection = () => {
 
               <div className="flex flex-col gap-1.5 text-left">
                 <label htmlFor="service" className="font-cabin text-xs uppercase tracking-wider text-muted font-bold">WHAT DO YOU NEED?</label>
-                <select 
-                  id="service" 
+                <select
+                  id="service"
                   value={formData.service}
                   onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                   className="w-full bg-[rgba(30,22,54,0.4)] border border-[rgba(164,132,215,0.2)] rounded-lg px-3 py-2.5 sm:py-3 text-sm text-foreground outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all appearance-none"
@@ -273,22 +273,22 @@ export const ContactSection = () => {
                   ))}
                 </select>
               </div>
-              
+
               <div className="flex flex-col gap-1.5 text-left">
                 <label htmlFor="message" className="font-cabin text-xs uppercase tracking-wider text-muted font-bold">MESSAGE</label>
-                <textarea 
-                  id="message" 
+                <textarea
+                  id="message"
                   required
-                  placeholder="Tell me about your project, deadline, and budget..." 
+                  placeholder="Tell me your brand link, product, goal, deadline, and budget..."
                   rows={4}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full bg-[rgba(30,22,54,0.4)] border border-[rgba(164,132,215,0.2)] rounded-lg px-3 py-3 text-sm text-foreground placeholder-muted outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none"
                 />
               </div>
-              
-              <button 
-                type="submit" 
+
+              <button
+                type="submit"
                 disabled={status === "loading"}
                 className="btn-primary w-full py-3.5 rounded-xl text-base sm:text-lg mt-1 sm:mt-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
               >
@@ -297,7 +297,7 @@ export const ContactSection = () => {
               </button>
 
               <p className="text-muted/50 text-[10px] text-center font-sans mt-0.5">
-                By submitting this form, you agree that I may contact you about your project.
+                International payment available on request.
               </p>
             </form>
           )}

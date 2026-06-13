@@ -5,7 +5,7 @@ import { Check } from "lucide-react";
 export const ServicesSection = () => {
   return (
     <section id="services" className="w-full max-w-7xl mx-auto px-6 md:px-8 pt-[64px] pb-[64px] flex flex-col items-center">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
@@ -13,13 +13,13 @@ export const ServicesSection = () => {
         className="flex flex-col items-center text-center space-y-6 max-w-3xl mb-16 md:mb-20"
       >
         <div className="glass-pill">SERVICES</div>
-        
+
         <h2 className="font-serif text-[44px] md:text-[56px] leading-[1.05] tracking-tight">
           What I <span className="italic text-gradient">offer</span>
         </h2>
-        
+
         <p className="text-muted text-lg md:text-xl font-sans max-w-2xl">
-          Clean ad creatives, AI-powered concepts, and design support for brands that need better content fast.
+          AI-assisted ad creatives and UGC-style concepts for D2C jewellery, beauty, skincare, and fashion brands.
         </p>
       </motion.div>
 
@@ -27,7 +27,7 @@ export const ServicesSection = () => {
         {services.map((service, i) => {
           const IconComponent = service.icon;
           return (
-            <motion.div 
+            <motion.div
               key={service.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}

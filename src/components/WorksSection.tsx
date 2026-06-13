@@ -15,16 +15,16 @@ interface CardProps {
   progress: MotionValue<number>;
 }
 
-const Card: React.FC<CardProps> = ({ 
-  work, 
-  index, 
+const Card: React.FC<CardProps> = ({
+  work,
+  index,
   total,
   targetScale,
-  progress 
+  progress
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-  
+
   const handleCardClick = () => {
     if (work.type === 'video' && !isVideoPlaying) {
       setIsVideoPlaying(true);
@@ -41,20 +41,20 @@ const Card: React.FC<CardProps> = ({
     e.stopPropagation();
     setIsVideoPlaying(false);
   };
-  
+
   // As progress goes from 0 to 1, if this card's index is passed, it shrinks
   const range = [index * (1 / total), 1];
   const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
-    <div 
+    <div
       ref={containerRef}
       className="flex justify-center sticky mb-0"
       style={{ top: `${80 + index * 8}px` }}
     >
-      <motion.div 
+      <motion.div
         onClick={handleCardClick}
-        style={{ 
+        style={{
           scale,
         }}
         className={`relative w-full max-w-md h-[60vh] min-h-[450px] md:h-[600px] glass-card rounded-[2rem] overflow-hidden shadow-2xl flex flex-col will-change-transform transform-origin-top ${isVideoPlaying ? 'video-playing' : ''} ${work.type === 'video' ? 'cursor-pointer' : ''}`}
@@ -62,7 +62,7 @@ const Card: React.FC<CardProps> = ({
         {/* Category Pill / Close Button */}
         <div className={`absolute top-4 right-4 z-[20] flex gap-2 transition-opacity duration-300`}>
           {isVideoPlaying ? (
-            <button 
+            <button
               onClick={stopVideo}
               className="bg-red-500/90 hover:bg-red-500 backdrop-blur-md rounded-full px-4 py-1.5 text-xs font-cabin tracking-wider font-bold uppercase text-white shadow-lg pointer-events-auto"
             >
@@ -82,7 +82,7 @@ const Card: React.FC<CardProps> = ({
           )}
         </div>
 
-        {/* Label Badge (Spec Concept / Client Work) */}
+        {/* Label Badge (Demo Concept / Client Work) */}
         {work.label && !isVideoPlaying && (
           <div className="absolute top-4 left-4 z-[20] bg-[rgba(30,22,54,0.8)] backdrop-blur-md rounded-full px-3 py-1 text-[10px] font-cabin tracking-wider font-bold uppercase text-muted/90 border border-[rgba(164,132,215,0.25)]">
             {work.label}
@@ -91,8 +91,8 @@ const Card: React.FC<CardProps> = ({
 
         {/* Media */}
         <div className="absolute inset-0 w-full h-full">
-          <MediaRenderer 
-            work={work} 
+          <MediaRenderer
+            work={work}
             isPlaying={isVideoPlaying}
             className="w-full h-full rounded-[2rem]"
           />
@@ -140,14 +140,14 @@ const MobileCard: React.FC<{ work: typeof works[0]; index: number; total: number
   };
 
   return (
-    <div 
+    <div
       onClick={handleCardClick}
       className={`relative w-[80vw] sm:w-[320px] h-[380px] shrink-0 snap-start glass-card rounded-[2rem] overflow-hidden flex flex-col cursor-pointer transition-all hover:border-primary/50 duration-300 ${isVideoPlaying ? 'video-playing' : ''}`}
     >
       {/* Category Pill / Close Button */}
       <div className="absolute top-4 right-4 z-[20] flex gap-2">
         {isVideoPlaying ? (
-          <button 
+          <button
             onClick={stopVideo}
             className="bg-red-500/90 hover:bg-red-500 backdrop-blur-md rounded-full px-3 py-1 text-[10px] font-cabin tracking-wider font-bold uppercase text-white shadow-lg pointer-events-auto"
           >
@@ -176,8 +176,8 @@ const MobileCard: React.FC<{ work: typeof works[0]; index: number; total: number
 
       {/* Media */}
       <div className="absolute inset-0 w-full h-full">
-        <MediaRenderer 
-          work={work} 
+        <MediaRenderer
+          work={work}
           isPlaying={isVideoPlaying}
           className="w-full h-full rounded-[2rem]"
         />
@@ -204,11 +204,11 @@ export const WorksSection = () => {
     offset: ["start start", "end end"]
   });
 
-  const categories = ["ALL", "AI UGC Ads", "Thumbnails", "Social Media Posts", "Graphic Design"];
+  const categories = ["ALL", "AI Product Ads", "AI UGC Ads", "Product Posts", "Thumbnails", "Graphic Design"];
   const [activeFilter, setActiveFilter] = useState("ALL");
 
-  const filteredWorks = activeFilter === "ALL" 
-    ? works 
+  const filteredWorks = activeFilter === "ALL"
+    ? works
     : works.filter(w => w.category === activeFilter);
 
   // Limit homepage to first 6 works
@@ -219,17 +219,17 @@ export const WorksSection = () => {
       <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8">
         <div className="flex flex-col items-center text-center space-y-4 md:space-y-6 mb-2">
           <div className="glass-pill">MY WORKS</div>
-          
+
           <h2 className="font-serif text-[34px] sm:text-[44px] md:text-[56px] leading-[1.1] sm:leading-[1.05] tracking-tight">
             Selected <span className="italic text-gradient">work</span>
           </h2>
-          
+
           <p className="text-muted text-sm sm:text-base md:text-xl font-sans max-w-2xl">
-            A mix of client projects, spec concepts, and practice campaigns.
+            Demo concepts, ad directions, and practice creatives for D2C brands.
           </p>
 
           {/* Filter Pills */}
-          <div 
+          <div
             className="flex w-full overflow-x-auto hide-scrollbar justify-start md:justify-center gap-2.5 py-3 px-4"
             style={{
               position: 'sticky',
@@ -255,8 +255,8 @@ export const WorksSection = () => {
                   });
                 }}
                 className={`shrink-0 rounded-full px-4 py-2 text-[10px] md:text-xs font-cabin tracking-widest font-bold uppercase transition-all ${
-                  activeFilter === cat 
-                    ? 'bg-primary text-white shadow-[0_0_15px_rgba(123,57,252,0.4)] border border-primary' 
+                  activeFilter === cat
+                    ? 'bg-primary text-white shadow-[0_0_15px_rgba(123,57,252,0.4)] border border-primary'
                     : 'glass-card text-muted hover:text-white'
                 }`}
               >
@@ -268,20 +268,20 @@ export const WorksSection = () => {
       </div>
 
       {/* Desktop Cards Stack Container */}
-      <div 
+      <div
         ref={containerRef}
         className="hidden md:block w-full relative px-6 md:px-8"
       >
         {displayedWorks.map((work, i) => {
           const targetScale = 1 - ( (displayedWorks.length - 1 - i) * 0.01 );
           return (
-            <Card 
-              key={work.id} 
-              index={i} 
-              work={work} 
+            <Card
+              key={work.id}
+              index={i}
+              work={work}
               total={displayedWorks.length}
               targetScale={targetScale}
-              progress={scrollYProgress} 
+              progress={scrollYProgress}
             />
           );
         })}
@@ -291,7 +291,7 @@ export const WorksSection = () => {
       <div className="md:hidden block w-full px-5">
         <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 py-4 hide-scrollbar scroll-smooth">
           {displayedWorks.map((work, i) => (
-            <MobileCard 
+            <MobileCard
               key={work.id}
               work={work}
               index={i}
@@ -303,8 +303,8 @@ export const WorksSection = () => {
 
       {/* View More Button */}
       <div className="flex justify-center mt-8 md:mt-16 relative z-30 w-full px-5 md:px-0">
-        <Link 
-          to="/works" 
+        <Link
+          to="/works"
           onClick={() => trackEvent({
             eventName: "view_more_click",
             elementName: "view_more_works",

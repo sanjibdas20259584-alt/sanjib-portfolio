@@ -1,10 +1,10 @@
 import { motion } from "motion/react";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, Lightbulb } from "lucide-react";
 import { trackEvent } from "../lib/analytics";
 
 export const FreeSampleCTA = () => {
   const whatsappUrl = `https://wa.me/918100146879?text=${encodeURIComponent(
-    "Hi Sanjib, I want a free sample creative idea for my brand. Here is my website/Instagram/product link:"
+    "Hi Sanjib, I want 2 free ad angles for my brand. Here is my website/Instagram/product link:"
   )}`;
 
   return (
@@ -21,16 +21,18 @@ export const FreeSampleCTA = () => {
         <div className="absolute bottom-0 left-0 w-[200px] h-[200px] bg-[radial-gradient(circle,_var(--color-purple-glow)_0%,_transparent_70%)] opacity-20 blur-[40px] pointer-events-none z-0" />
 
         <div className="relative z-10 space-y-6 max-w-2xl">
-          <div className="glass-pill">FREE SAMPLE</div>
+          <div className="glass-pill">FREE AD ANGLES</div>
+
+          <div className="w-14 h-14 rounded-full bg-primary/20 text-primary flex items-center justify-center mx-auto">
+            <Lightbulb size={28} />
+          </div>
 
           <h2 className="font-serif text-[32px] md:text-[44px] leading-[1.1] tracking-tight text-foreground">
-            Want to see what I can make for{" "}
-            <span className="italic text-gradient">your brand</span>?
+            Want 2 ad angles for your <span className="italic text-gradient">product</span>?
           </h2>
 
           <p className="text-muted text-base md:text-lg font-sans">
-            Send me your brand/product link and I'll suggest one free creative
-            idea or sample direction.
+            Send your brand/product link and I'll suggest 2 quick ad angles you can test. No full finished video — just clear creative direction to help you decide.
           </p>
 
           <a
@@ -39,13 +41,13 @@ export const FreeSampleCTA = () => {
             rel="noopener noreferrer"
             onClick={() => trackEvent({
               eventName: "whatsapp_click",
-              elementName: "free_sample_cta",
+              elementName: "free_ad_angles_cta",
               category: "conversion",
             })}
             className="btn-primary py-4 px-8 text-base md:text-lg inline-flex items-center gap-2 shadow-lg hover:brightness-110 mx-auto"
           >
             <MessageCircle size={20} />
-            Request Free Sample
+            Get 2 Free Ad Angles
           </a>
         </div>
       </motion.div>

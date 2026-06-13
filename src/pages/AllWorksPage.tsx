@@ -10,7 +10,7 @@ export const AllWorksPage = () => {
   const [activeFilter, setActiveFilter] = useState<string>("All");
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const categories = ["All", "Graphic Design", "Thumbnails", "AI UGC Ads", "Social Media Posts"];
+  const categories = ["All", "AI Product Ads", "AI UGC Ads", "Product Posts", "Thumbnails", "Graphic Design"];
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -26,22 +26,27 @@ export const AllWorksPage = () => {
     {
       category: "AI UGC Ads",
       title: "AI UGC Ads",
-      subtitle: "Short-form AI video ad concepts and creator-style product videos."
+      subtitle: "UGC-style AI video ad concepts for D2C product brands."
+    },
+    {
+      category: "AI Product Ads",
+      title: "AI Product Ads",
+      subtitle: "Short AI-assisted product ad creatives for testing."
+    },
+    {
+      category: "Product Posts",
+      title: "Product Posts",
+      subtitle: "Social media product visuals for jewellery, beauty, and fashion brands."
     },
     {
       category: "Thumbnails",
-      title: "Thumbnails",
-      subtitle: "High-CTR YouTube thumbnail designs for creators and channels."
-    },
-    {
-      category: "Social Media Posts",
-      title: "Social Media Posts",
-      subtitle: "Product-focused social media creatives and promotional designs."
+      title: "YouTube Thumbnails",
+      subtitle: "High-CTR thumbnail designs (additional service)."
     },
     {
       category: "Graphic Design",
       title: "Graphic Design",
-      subtitle: "Posters, promotional visuals, and campaign graphics."
+      subtitle: "Posters, promotional visuals, and campaign graphics (additional service)."
     }
   ];
 
@@ -57,8 +62,8 @@ export const AllWorksPage = () => {
       <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 relative z-10">
         {/* Back Link */}
         <div className="mb-6 md:mb-8">
-          <Link 
-            to="/#my-works" 
+          <Link
+            to="/#my-works"
             className="inline-flex items-center gap-2 text-muted hover:text-white transition-colors font-sans text-xs sm:text-sm"
           >
             <ArrowLeft size={14} /> Back to Portfolio
@@ -72,15 +77,15 @@ export const AllWorksPage = () => {
             All Works
           </h1>
           <p className="text-muted text-sm sm:text-base md:text-xl font-sans max-w-2xl px-2">
-            A mix of client projects, spec concepts, and practice campaigns across AI ads, UGC, thumbnails, and product posts.
+            Demo/spec creatives showing ad direction, hooks, and product storytelling for D2C brands.
           </p>
         </div>
 
         {/* Category Filters (Sticky Scroll-Reactive Container) */}
-        <div 
+        <div
           className={`flex w-full overflow-x-auto hide-scrollbar justify-start md:justify-center gap-2 mb-8 md:mb-16 pb-2 transition-all duration-300 ease-in-out ${
-            isScrolled 
-              ? 'sticky top-3 z-50 bg-[rgba(30,22,54,0.85)] backdrop-blur-[24px] border border-[rgba(164,132,215,0.45)] shadow-[0_8px_32px_rgba(0,0,0,0.4)] py-2 px-3 rounded-full max-w-[calc(100vw-2rem)] md:max-w-max mx-auto' 
+            isScrolled
+              ? 'sticky top-3 z-50 bg-[rgba(30,22,54,0.85)] backdrop-blur-[24px] border border-[rgba(164,132,215,0.45)] shadow-[0_8px_32px_rgba(0,0,0,0.4)] py-2 px-3 rounded-full max-w-[calc(100vw-2rem)] md:max-w-max mx-auto'
               : 'sticky top-4 md:top-[75px] z-40 bg-[rgba(9, 9, 15, 0.8)] backdrop-blur-[12px] border border-[rgba(164,132,215,0.1)] py-2 px-3 rounded-full w-full'
           }`}
         >
@@ -98,8 +103,8 @@ export const AllWorksPage = () => {
                 });
               }}
               className={`shrink-0 rounded-full px-4 py-2 text-[10px] md:text-xs font-cabin tracking-widest font-bold uppercase transition-all ${
-                activeFilter === cat 
-                  ? 'bg-primary text-white shadow-[0_0_15px_rgba(123,57,252,0.4)] border border-primary' 
+                activeFilter === cat
+                  ? 'bg-primary text-white shadow-[0_0_15px_rgba(123,57,252,0.4)] border border-primary'
                   : 'glass-card text-muted hover:text-white'
               }`}
             >
@@ -161,10 +166,10 @@ const WorkCard: React.FC<{ work: WorkItem }> = ({ work }) => {
       transition={{ duration: 0.3 }}
       className="glass-card rounded-[2rem] overflow-hidden flex flex-col group hover:border-primary/50 transition-all duration-300"
     >
-      <MediaRenderer 
-        work={work} 
-        isPlaying={isPlaying} 
-        setIsPlaying={setIsPlaying} 
+      <MediaRenderer
+        work={work}
+        isPlaying={isPlaying}
+        setIsPlaying={setIsPlaying}
       />
 
       {/* Info Container */}
@@ -186,16 +191,21 @@ const WorkCard: React.FC<{ work: WorkItem }> = ({ work }) => {
           {work.title}
         </h3>
 
-        {/* Goal */}
+        {/* Goal and Angle */}
         {work.goal && (
-          <p className="text-primary/70 text-xs font-sans mb-2 italic">
+          <p className="text-primary/70 text-xs font-sans mb-1 italic">
             Goal: {work.goal}
+          </p>
+        )}
+        {work.angle && (
+          <p className="text-muted/70 text-xs font-sans mb-3">
+            Angle: {work.angle}
           </p>
         )}
 
         {/* Description */}
         {work.description && (
-          <p className="text-muted text-sm leading-relaxed mb-6 font-sans">
+          <p className="text-muted text-sm leading-relaxed mb-4 font-sans">
             {work.description}
           </p>
         )}

@@ -1,20 +1,94 @@
 export interface PricingPackage {
   id: string;
-  category: "Graphic Design" | "AI Ads" | "AI UGC Ads" | "Brand Identity" | "Bundles";
-  subcategory?: "YouTube Thumbnail Design" | "Poster Design" | "Product Post Design";
+  category: "Core AI Ad Creatives" | "Additional Design Services";
+  subcategory?: "YouTube Thumbnail Design" | "Poster Design" | "Product Post Design" | "Brand Identity" | "YouTube Thumbnail Design" | "Poster Design" | "Product Post Design";
   title: string;
   price: string;
   description: string;
   features: string[];
   bestFor: string;
   isPopular: boolean;
+  badge?: string | null;
+  badgeType?: "popular" | "secondary" | "monthly" | null;
 }
 
 export const pricingPackages: PricingPackage[] = [
-  // GRAPHIC DESIGN - YouTube Thumbnail Design
+  // CORE AI AD CREATIVES
+  {
+    id: "paid-trial-ad",
+    category: "Core AI Ad Creatives",
+    title: "Paid Trial Ad",
+    price: "₹699",
+    description: "A single AI-assisted product or UGC-style ad creative to test quality before a bigger commitment.",
+    features: [
+      "1 short 8-12 sec AI-assisted ad creative",
+      "1 hook/concept",
+      "1 revision",
+      "48-hour delivery",
+    ],
+    bestFor: "First-time brands that want to test quality before a bigger creative pack.",
+    isPopular: false,
+    badge: "Best First Step",
+    badgeType: "secondary"
+  },
+  {
+    id: "starter-creative-test",
+    category: "Core AI Ad Creatives",
+    title: "Starter Creative Test",
+    price: "₹2,499",
+    description: "Three AI-assisted ad creatives with different hooks and angles for brands starting to test ad creative direction.",
+    features: [
+      "3 short AI-assisted ad creatives",
+      "3 different hooks/angles",
+      "Product-focused copy",
+      "2 revisions",
+      "Delivery in 4-5 days",
+    ],
+    bestFor: "Brands testing 2-3 ad angles before scaling.",
+    isPopular: false,
+  },
+  {
+    id: "growth-creative-pack",
+    category: "Core AI Ad Creatives",
+    title: "Growth Creative Pack",
+    price: "₹4,999",
+    description: "Six AI-assisted ad creatives with hook variations and product benefit angles for brands that need more creative testing.",
+    features: [
+      "6 short AI-assisted ad creatives",
+      "Hook variations",
+      "Product benefit angles",
+      "UGC-style or product-led direction",
+      "2 revisions",
+      "Delivery in 7-8 days",
+    ],
+    bestFor: "Brands that need more creative testing volume.",
+    isPopular: true,
+    badge: "Most Popular",
+    badgeType: "popular"
+  },
+  {
+    id: "monthly-creative-testing",
+    category: "Core AI Ad Creatives",
+    title: "Monthly Creative Testing",
+    price: "₹7,999/month",
+    description: "Consistent monthly creative support for D2C brands that need a steady stream of ad creatives to test and optimize.",
+    features: [
+      "10 short ad creatives/month",
+      "Hooks + CTA ideas",
+      "Product ad angles",
+      "Weekly creative direction",
+      "Priority delivery",
+    ],
+    bestFor: "D2C brands that need consistent ad creatives every month.",
+    isPopular: false,
+    badge: "Monthly",
+    badgeType: "monthly"
+  },
+
+  // ADDITIONAL DESIGN SERVICES - YouTube Thumbnail Design
   {
     id: "starter-thumbnail",
-    category: "Graphic Design",
+    category: "Additional Design Services",
     subcategory: "YouTube Thumbnail Design",
     title: "Starter Thumbnail",
     price: "₹399 per thumbnail",
@@ -31,7 +105,7 @@ export const pricingPackages: PricingPackage[] = [
   },
   {
     id: "standard-thumbnail",
-    category: "Graphic Design",
+    category: "Additional Design Services",
     subcategory: "YouTube Thumbnail Design",
     title: "Standard Thumbnail",
     price: "₹699 per thumbnail",
@@ -49,7 +123,7 @@ export const pricingPackages: PricingPackage[] = [
   },
   {
     id: "thumbnail-pack",
-    category: "Graphic Design",
+    category: "Additional Design Services",
     subcategory: "YouTube Thumbnail Design",
     title: "Thumbnail Pack",
     price: "₹2,499 for 5 thumbnails",
@@ -65,10 +139,10 @@ export const pricingPackages: PricingPackage[] = [
     isPopular: false
   },
 
-  // GRAPHIC DESIGN - Poster Design
+  // ADDITIONAL DESIGN SERVICES - Poster Design
   {
     id: "basic-poster",
-    category: "Graphic Design",
+    category: "Additional Design Services",
     subcategory: "Poster Design",
     title: "Basic Poster",
     price: "₹499 per poster",
@@ -85,7 +159,7 @@ export const pricingPackages: PricingPackage[] = [
   },
   {
     id: "premium-poster",
-    category: "Graphic Design",
+    category: "Additional Design Services",
     subcategory: "Poster Design",
     title: "Premium Poster",
     price: "₹999 per poster",
@@ -103,7 +177,7 @@ export const pricingPackages: PricingPackage[] = [
   },
   {
     id: "poster-pack",
-    category: "Graphic Design",
+    category: "Additional Design Services",
     subcategory: "Poster Design",
     title: "Poster Pack",
     price: "₹3,999 for 5 posters",
@@ -119,10 +193,10 @@ export const pricingPackages: PricingPackage[] = [
     isPopular: false
   },
 
-  // GRAPHIC DESIGN - Product Post Design
+  // ADDITIONAL DESIGN SERVICES - Product Post Design
   {
     id: "single-product-post",
-    category: "Graphic Design",
+    category: "Additional Design Services",
     subcategory: "Product Post Design",
     title: "Single Product Post",
     price: "₹499 per post",
@@ -139,7 +213,7 @@ export const pricingPackages: PricingPackage[] = [
   },
   {
     id: "premium-product-post",
-    category: "Graphic Design",
+    category: "Additional Design Services",
     subcategory: "Product Post Design",
     title: "Premium Product Post",
     price: "₹899 per post",
@@ -157,7 +231,7 @@ export const pricingPackages: PricingPackage[] = [
   },
   {
     id: "product-post-pack",
-    category: "Graphic Design",
+    category: "Additional Design Services",
     subcategory: "Product Post Design",
     title: "Product Post Pack",
     price: "₹3,499 for 5 posts",
@@ -173,120 +247,11 @@ export const pricingPackages: PricingPackage[] = [
     isPopular: true
   },
 
-  // AI ADS
-  {
-    id: "ai-ad-starter",
-    category: "AI Ads",
-    title: "AI Ad Starter",
-    price: "₹999 per ad creative",
-    description: "Introductory AI creative to test automated ad visuals for your brand.",
-    features: [
-      "1 AI-generated ad visual",
-      "1 product or brand-focused concept",
-      "Basic ad copy/hook suggestion",
-      "1 revision",
-      "Delivery in 2-3 days"
-    ],
-    bestFor: "Small brands testing AI ad creatives",
-    isPopular: false
-  },
-  {
-    id: "ai-ad-standard",
-    category: "AI Ads",
-    title: "AI Ad Standard",
-    price: "₹2,499 for 3 ad creatives",
-    description: "Multi-angle AI ad variations to optimize your campaign click-through rates.",
-    features: [
-      "3 AI-generated ad creatives",
-      "3 different concepts or angles",
-      "Product-focused visual direction",
-      "Hook and caption suggestions",
-      "2 revisions",
-      "Delivery in 4-5 days"
-    ],
-    bestFor: "Brands testing multiple ad angles",
-    isPopular: true
-  },
-  {
-    id: "ai-ad-campaign",
-    category: "AI Ads",
-    title: "AI Ad Campaign Pack",
-    price: "₹5,999 for 8 ad creatives",
-    description: "Comprehensive set of AI ad visuals to fuel major scaling campaigns.",
-    features: [
-      "8 AI-generated ad creatives",
-      "Multiple campaign angles",
-      "Product visuals",
-      "Offer-based creatives",
-      "Hook and copy suggestions",
-      "2 revisions per creative",
-      "Delivery in 7-10 days"
-    ],
-    bestFor: "Brands running ad campaigns or social promotions",
-    isPopular: false
-  },
-
-  // AI UGC ADS
-  {
-    id: "ai-ugc-starter",
-    category: "AI UGC Ads",
-    title: "AI UGC Starter",
-    price: "₹1,499 per video concept",
-    description: "UGC video script and concept designed to test visual hooks and formats.",
-    features: [
-      "1 AI UGC-style video concept",
-      "Script structure",
-      "Hook",
-      "Scene-by-scene prompt",
-      "Basic product positioning",
-      "1 revision",
-      "Delivery in 2-3 days"
-    ],
-    bestFor: "Brands trying UGC-style ads for the first time",
-    isPopular: false
-  },
-  {
-    id: "ai-ugc-standard",
-    category: "AI UGC Ads",
-    title: "AI UGC Standard",
-    price: "₹3,999 for 3 video concepts",
-    description: "Optimized UGC concepts with multiple hook variations to lower ad costs.",
-    features: [
-      "3 AI UGC-style ad concepts",
-      "Hook variations",
-      "Scene-by-scene video prompts",
-      "Product benefit angles",
-      "CTA suggestions",
-      "2 revisions",
-      "Delivery in 5-7 days"
-    ],
-    bestFor: "Brands testing different UGC ad angles",
-    isPopular: true
-  },
-  {
-    id: "ai-ugc-campaign",
-    category: "AI UGC Ads",
-    title: "AI UGC Campaign Pack",
-    price: "₹8,999 for 6 video concepts",
-    description: "Full creative storytelling and prompts for scaled UGC ad campaigns.",
-    features: [
-      "6 AI UGC-style video ad concepts",
-      "Multiple hooks",
-      "Full scene prompts",
-      "Product-focused storytelling",
-      "CTA suggestions",
-      "Creative direction for each video",
-      "2 revisions per concept",
-      "Delivery in 8-12 days"
-    ],
-    bestFor: "Skincare, fashion, e-commerce, coaches, and local brands",
-    isPopular: false
-  },
-
-  // BRAND IDENTITY
+  // ADDITIONAL DESIGN SERVICES - Brand Identity
   {
     id: "brand-identity-starter",
-    category: "Brand Identity",
+    category: "Additional Design Services",
+    subcategory: "Brand Identity",
     title: "Brand Identity Starter",
     price: "₹2,999",
     description: "Essential logo and brand rules to establish a professional start.",
@@ -303,7 +268,8 @@ export const pricingPackages: PricingPackage[] = [
   },
   {
     id: "brand-identity-standard",
-    category: "Brand Identity",
+    category: "Additional Design Services",
+    subcategory: "Brand Identity",
     title: "Brand Identity Standard",
     price: "₹6,999",
     description: "Complete branding package with logo system, guide, and profile assets.",
@@ -322,7 +288,8 @@ export const pricingPackages: PricingPackage[] = [
   },
   {
     id: "brand-identity-premium",
-    category: "Brand Identity",
+    category: "Additional Design Services",
+    subcategory: "Brand Identity",
     title: "Brand Identity Premium",
     price: "₹12,999",
     description: "Full-scale corporate identity, style guide rules, and versatile logo lockups.",
@@ -339,81 +306,6 @@ export const pricingPackages: PricingPackage[] = [
       "Delivery in 10-14 days"
     ],
     bestFor: "Businesses that want a polished and complete brand identity",
-    isPopular: false
-  },
-
-  // BUNDLES
-  {
-    id: "bundle-starter",
-    category: "Bundles",
-    title: "Social Media Starter Bundle",
-    price: "₹4,999",
-    description: "Essential content kickstart featuring posts, posters, and ad visuals.",
-    features: [
-      "5 social media posts",
-      "2 promotional posters",
-      "1 AI ad creative",
-      "Basic caption/hook suggestions",
-      "Consistent visual style",
-      "Delivery in 7 days"
-    ],
-    bestFor: "Small businesses starting online marketing",
-    isPopular: false
-  },
-  {
-    id: "bundle-growth",
-    category: "Bundles",
-    title: "Brand Growth Bundle",
-    price: "₹9,999",
-    description: "Strategic content package combining social posts, posters, and UGC ad hooks.",
-    features: [
-      "8 social media posts",
-      "3 promotional posters",
-      "3 AI ad creatives",
-      "1 AI UGC video concept",
-      "Hook and CTA suggestions",
-      "Consistent campaign style",
-      "Delivery in 10-12 days"
-    ],
-    bestFor: "Brands that want stronger online presence",
-    isPopular: true
-  },
-  {
-    id: "bundle-campaign",
-    category: "Bundles",
-    title: "Premium Brand Campaign Bundle",
-    price: "₹17,999",
-    description: "Full-scale content production bundle for major digital campaigns.",
-    features: [
-      "12 social media posts",
-      "5 promotional posters",
-      "6 AI ad creatives",
-      "3 AI UGC video concepts",
-      "Campaign hooks and CTA ideas",
-      "Product-focused creative direction",
-      "Consistent visual identity across all creatives",
-      "Delivery in 14-18 days"
-    ],
-    bestFor: "Brands running a full promotional campaign",
-    isPopular: false
-  },
-  {
-    id: "bundle-launch",
-    category: "Bundles",
-    title: "Complete Brand Launch Bundle",
-    price: "₹24,999",
-    description: "The ultimate brand package: identity system combined with launch creatives.",
-    features: [
-      "Brand Identity Standard package",
-      "10 social media posts",
-      "5 promotional posters",
-      "5 AI ad creatives",
-      "2 AI UGC video concepts",
-      "Profile icon",
-      "Basic launch campaign direction",
-      "Delivery in 18-25 days"
-    ],
-    bestFor: "New brands launching online",
     isPopular: false
   }
 ];

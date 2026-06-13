@@ -1,19 +1,17 @@
-import { MessageCircle, Zap, Video, Image, Smartphone, Palette, Sparkles } from "lucide-react";
+import { MessageCircle, Zap, Video, Target, Package, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 
 export const AboutSection = () => {
   const skills = [
-    { name: "AI Ad Creatives", icon: Zap },
-    { name: "AI UGC Concepts", icon: Video },
-    { name: "YouTube Thumbnails", icon: Image },
-    { name: "Social Media Posts", icon: Smartphone },
-    { name: "Graphic Design", icon: Palette },
-    { name: "Brand Identity", icon: Sparkles },
+    { name: "AI Product Ad Creatives", icon: Zap },
+    { name: "AI UGC-style Ad Concepts", icon: Video },
+    { name: "Hook & Angle Testing", icon: Target },
+    { name: "Creative Packs for D2C Brands", icon: Package },
   ];
 
   return (
     <section id="about-me" className="w-full max-w-7xl mx-auto px-5 sm:px-6 md:px-8 pt-12 md:pt-[64px] pb-6 md:pb-8 flex flex-col items-center">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
@@ -21,17 +19,17 @@ export const AboutSection = () => {
         className="flex flex-col items-center text-center space-y-6 max-w-3xl"
       >
         <div className="glass-pill">ABOUT ME</div>
-        
+
         <h2 className="font-serif text-[48px] md:text-[56px] leading-[1.05] tracking-tight">
           The person behind the <span className="italic text-gradient">creatives</span>
         </h2>
-        
+
         <div className="space-y-5 text-muted text-lg md:text-xl font-sans text-left md:text-center mt-6">
           <p>
-            I'm Sanjib, a graphic designer and AI creative maker from Kolkata, India. I focus on making creatives that help brands look sharper, explain their product faster, and get more attention online.
+            I create AI-assisted ad creatives and UGC-style concepts for D2C brands. My focus is product hooks, ad angles, short-form content, and fast creative testing for jewellery, beauty, skincare, and fashion brands.
           </p>
           <p>
-            Whether it's AI-generated ad visuals, UGC-style video concepts, YouTube thumbnails, or product posts — I handle it from concept to delivery.
+            I use AI tools combined with creative direction to help brands generate multiple ad angles quickly — so they can test what works without expensive shoots or long turnaround times.
           </p>
         </div>
 
@@ -47,7 +45,7 @@ export const AboutSection = () => {
 
       <div className="w-full grid grid-cols-2 gap-3 md:gap-4 mt-12 max-w-4xl mx-auto">
         {skills.map((skill, i) => (
-          <motion.div 
+          <motion.div
             key={skill.name}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +61,7 @@ export const AboutSection = () => {
         ))}
       </div>
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
@@ -72,20 +70,20 @@ export const AboutSection = () => {
       >
         <div className="w-full flex flex-row justify-between items-center divide-x divide-[rgba(164,132,215,0.2)]">
           <div className="flex flex-col items-center justify-center w-full px-1 sm:px-4">
-            <span className="font-serif text-3xl sm:text-5xl md:text-6xl text-gradient block mb-1">10+</span>
-            <span className="font-cabin text-[10px] sm:text-sm uppercase tracking-wider text-muted text-center leading-tight">Clients served</span>
+            <span className="font-serif text-3xl sm:text-5xl md:text-6xl text-gradient block mb-1">8+</span>
+            <span className="font-cabin text-[10px] sm:text-sm uppercase tracking-wider text-muted text-center leading-tight">Demo Creatives</span>
           </div>
           <div className="flex flex-col items-center justify-center w-full px-1 sm:px-4">
-            <span className="font-serif text-3xl sm:text-5xl md:text-6xl text-gradient block mb-1">50+</span>
-            <span className="font-cabin text-[10px] sm:text-sm uppercase tracking-wider text-muted text-center leading-tight">Projects done</span>
+            <span className="font-serif text-3xl sm:text-5xl md:text-6xl text-gradient block mb-1">4</span>
+            <span className="font-cabin text-[10px] sm:text-sm uppercase tracking-wider text-muted text-center leading-tight">Creative Formats</span>
           </div>
           <div className="flex flex-col items-center justify-center w-full px-1 sm:px-4">
-            <span className="font-serif text-3xl sm:text-5xl md:text-6xl text-gradient block mb-1">1+</span>
-            <span className="font-cabin text-[10px] sm:text-sm uppercase tracking-wider text-muted text-center leading-tight">Year active</span>
+            <span className="font-serif text-3xl sm:text-5xl md:text-6xl text-gradient block mb-1">48h</span>
+            <span className="font-cabin text-[10px] sm:text-sm uppercase tracking-wider text-muted text-center leading-tight">Trial Delivery</span>
           </div>
         </div>
         <span className="text-xs text-muted/60 font-sans italic">
-          Includes client work, sample campaigns, and practice projects.
+          Portfolio includes demo/spec creatives created to show ad direction, hooks, and product storytelling. Real client case studies will be added as they come in.
         </span>
       </motion.div>
     </section>

@@ -3,6 +3,8 @@ import { Navbar } from "./components/Navbar";
 import { HeroSection } from "./components/HeroSection";
 import { AboutSection } from "./components/AboutSection";
 import { ServicesSection } from "./components/ServicesSection";
+import { WhoIHelpSection } from "./components/WhoIHelpSection";
+import { ProcessSection } from "./components/ProcessSection";
 import { WorksSection } from "./components/WorksSection";
 import { PricingSection } from "./components/PricingSection";
 import { TrustSection } from "./components/TrustSection";
@@ -50,20 +52,22 @@ export default function App() {
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans relative">
       {!isAdminRoute && <Navbar />}
       <Routes>
-        <Route 
-          path="/" 
+        <Route
+          path="/"
           element={
             <>
               <HeroSection />
               <AboutSection />
               <ServicesSection />
+              <WhoIHelpSection />
+              <ProcessSection />
               <WorksSection />
               <PricingSection />
               <TrustSection />
               <FreeSampleCTA />
               <ContactSection />
             </>
-          } 
+          }
         />
         <Route path="/works" element={<AllWorksPage />} />
         <Route path="/pricing" element={<PricingPage />} />

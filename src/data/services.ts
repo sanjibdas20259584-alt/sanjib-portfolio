@@ -1,4 +1,4 @@
-import { Zap, Video, Image, Smartphone } from "lucide-react";
+import { Zap, Video, Target, Package } from "lucide-react";
 import { ComponentType } from "react";
 
 export interface ServiceItem {
@@ -12,55 +12,55 @@ export interface ServiceItem {
 
 export const services: ServiceItem[] = [
   {
-    id: "ai-ad-creatives",
-    title: "AI Ad Creatives",
-    description: "High-quality AI-generated ad visuals and product creatives for brands that need better content for Instagram, Facebook, websites, or paid ads.",
+    id: "ai-product-ad-creatives",
+    title: "AI Product Ad Creatives",
+    description: "Short product-focused ad creatives for jewellery, skincare, beauty, and fashion brands.",
     bullets: [
-      "Product ad visuals",
-      "Hook-based creative concepts",
-      "Social media ad layouts",
-      "Campaign-ready visual directions"
+      "Product close-up concepts",
+      "Offer and benefit-led creatives",
+      "9:16 ad-ready direction",
+      "Instagram/Reels-ready structure"
     ],
-    bestFor: "Skincare, fashion, food, SaaS, coaching, and e-commerce brands.",
+    bestFor: "D2C jewellery, skincare, beauty, and fashion brands that need ad visuals.",
     icon: Zap
   },
   {
-    id: "ai-ugc-concepts",
-    title: "AI UGC Concepts",
-    description: "UGC-style ad concepts with hooks, scripts, scene ideas, and AI video direction so brands can test content without expensive shoots.",
+    id: "ai-ugc-style-ad-concepts",
+    title: "AI UGC-style Ad Concepts",
+    description: "Human-feeling UGC-style ad concepts using AI-assisted visuals, hooks, and scene direction.",
     bullets: [
       "UGC hooks and scripts",
-      "Short ad scripts",
       "Scene-by-scene direction",
-      "AI avatar/spokesperson concepts"
+      "AI model/creator-style concepts",
+      "Product storytelling"
     ],
-    bestFor: "Product brands, SaaS, online stores, and service businesses.",
+    bestFor: "Brands that want creator-style ads without expensive shoots.",
     icon: Video
   },
   {
-    id: "youtube-thumbnails",
-    title: "YouTube Thumbnails",
-    description: "High-CTR YouTube thumbnail designs that make people click — clean layouts, bold text, and eye-catching visuals.",
+    id: "hook-angle-testing",
+    title: "Hook & Angle Testing",
+    description: "Multiple creative angles so brands can test what gets attention.",
     bullets: [
-      "Custom thumbnail designs",
-      "Face and product cutout styling",
-      "Bold text and color treatments",
-      "Consistent channel branding"
+      "Gifting angle",
+      "Luxury/value angle",
+      "Social proof angle",
+      "Problem/solution angle"
     ],
-    bestFor: "Content creators, YouTubers, educators, and online coaches.",
-    icon: Image
+    bestFor: "Brands that want to test multiple ad approaches before committing.",
+    icon: Target
   },
   {
-    id: "social-media-posts",
-    title: "Social Media & Product Posts",
-    description: "Product-focused social media creatives and promotional post designs for Instagram, Facebook, and other platforms.",
+    id: "creative-packs-d2c",
+    title: "Creative Packs for D2C Brands",
+    description: "Monthly creative support for brands that need consistent content testing.",
     bullets: [
-      "Product showcase posts",
-      "Promotional graphics",
-      "Social media carousel designs",
-      "Platform-ready sizing"
+      "Ad creative batches",
+      "Hook variations",
+      "CTA suggestions",
+      "Monthly creative direction"
     ],
-    bestFor: "E-commerce stores, local businesses, marketers, and small brands.",
-    icon: Smartphone
+    bestFor: "D2C brands that need a steady stream of ad creatives to test.",
+    icon: Package
   }
 ];
