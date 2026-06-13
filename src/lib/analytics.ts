@@ -36,7 +36,6 @@ interface TrackEventParams {
   category?: string;
   metadata?: Record<string, any>;
 }
-
 export async function trackEvent({
   eventName,
   pagePath,
@@ -45,7 +44,7 @@ export async function trackEvent({
   metadata,
 }: TrackEventParams): Promise<void> {
   try {
-    await supabase.from("analytics_events").insert({
+    const { error } = await supabase.from("analytics_events").insert({
       event_name: eventName,
       page_path: pagePath || window.location.pathname,
       element_name: elementName || null,
@@ -57,7 +56,10 @@ export async function trackEvent({
       user_agent: navigator.userAgent || null,
       device_type: getDeviceType(),
     });
-  } catch {
-    // Analytics should never break the site
+    if (error) {
+      console.error("Supabase Analytics tracking error:", error);
+    }
+  } catch (err) {
+    console.error("Analytics network/execution error:", err);
   }
 }
