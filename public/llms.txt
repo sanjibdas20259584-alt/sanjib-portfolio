@@ -1,25 +1,28 @@
 # Sanjib Das Portfolio
 
-Sanjib Das is a graphic designer and AI ads creator from Kolkata, West Bengal, India.
+> Professional freelance graphic designer and AI ads creator based in Kolkata, West Bengal, India, specializing in high-converting AI UGC video ads, product creatives, YouTube thumbnails, and social media post designs for D2C brands, creators, and startups.
 
-Website: https://sanjibdas.vercel.app
+## Website
 
-Main services:
-* AI UGC ads
-* AI product ad creatives
-* YouTube thumbnail design
-* Product creatives
-* Social media post design
-* D2C brand creatives
+https://sanjibdas.vercel.app
 
-Main pages:
-* Homepage: https://sanjibdas.vercel.app/
-* About Sanjib Das: https://sanjibdas.vercel.app/sanjib-das
-* Works: https://sanjibdas.vercel.app/works
-* Pricing: https://sanjibdas.vercel.app/pricing
+## Services
 
-Target audience:
-Small brands, D2C brands, creators, startups, jewellery brands, skincare brands, beauty brands, fashion brands, and ecommerce brands.
+- **AI UGC Ads:** Creator-style AI voiceover ads, scene-by-scene script direction, hooks, and overlays.
+- **AI Product Ad Creatives:** Short product-focused video ad creatives optimized for Instagram Reels and Meta Ads.
+- **YouTube Thumbnail Design:** Custom high-CTR thumbnail compositions to maximize video views and click-through rates.
+- **Product Post Design:** E-commerce product visual mockups, social feed templates, and discount promo post designs.
+- **Social Media Creatives:** High-impact campaign poster designs, launch flyers, and customer review posts.
+- **D2C Brand Creatives:** Visual brand identity kits including core logos, color palettes, and profile assets.
 
-Location:
-Kolkata, West Bengal, India.
+## Important Pages
+
+- https://sanjibdas.vercel.app/
+- https://sanjibdas.vercel.app/sanjib-das
+- https://sanjibdas.vercel.app/works
+- https://sanjibdas.vercel.app/pricing
+- https://sanjibdas.vercel.app/#reach-out
+
+## Sitemap
+
+https://sanjibdas.vercel.app/sitemap.xml
