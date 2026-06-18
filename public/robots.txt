@@ -1,4 +1,15 @@
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 User-agent: *
 Allow: /
 
 Sitemap: https://sanjibdas.vercel.app/sitemap.xml
+
+LLMS: https://sanjibdas.vercel.app/llms.txt
