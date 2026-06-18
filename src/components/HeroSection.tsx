@@ -71,6 +71,13 @@ export const HeroSection = () => {
         }}
       />
 
+      {/* Background glow spots */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
+        <div className="glow-spot bg-glow-spot-primary w-[350px] md:w-[600px] h-[350px] md:h-[600px] -top-[10%] -left-[10%] opacity-50" />
+        <div className="glow-spot bg-glow-spot-secondary w-[300px] md:w-[500px] h-[300px] md:h-[500px] bottom-[10%] -right-[5%] opacity-40" />
+        <div className="glow-spot bg-glow-spot-accent w-[250px] md:w-[400px] h-[250px] md:h-[400px] top-[40%] left-[50%] -translate-x-1/2 opacity-30" />
+      </div>
+
       {/* Content */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}

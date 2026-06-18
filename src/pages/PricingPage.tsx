@@ -65,7 +65,25 @@ export const PricingPage = () => {
                   "item": "https://sanjibdas.vercel.app/pricing"
                 }
               ]
-            }
+            },
+            ...pricingPackages
+              .filter((pkg) => pkg.category === "Core AI Ad Creatives")
+              .map((pkg) => {
+                const numericPrice = parseInt(pkg.price.replace(/[^\d]/g, ""), 10);
+                return {
+                  "@type": "Product",
+                  "name": pkg.title,
+                  "description": `${pkg.description} Features: ${pkg.features.join(", ")}`,
+                  "image": "https://sanjibdas.vercel.app/sanjib-logo.png",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": numericPrice,
+                    "priceCurrency": "INR",
+                    "url": "https://sanjibdas.vercel.app/pricing",
+                    "availability": "https://schema.org/InStock"
+                  }
+                };
+              })
           ]
         }}
       />

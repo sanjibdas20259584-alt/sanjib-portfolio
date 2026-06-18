@@ -94,6 +94,35 @@ export const AllWorksPage = () => {
                   "item": "https://sanjibdas.vercel.app/works"
                 }
               ]
+            },
+            {
+              "@type": "ItemList",
+              "name": "Sanjib Das Works Portfolio",
+              "numberOfItems": works.length,
+              "itemListElement": works.map((work, index) => {
+                const imageUrl = work.thumbnailUrl || (work.type === "image" ? work.url : "");
+                const absoluteImageUrl = imageUrl
+                  ? imageUrl.startsWith("http")
+                    ? imageUrl
+                    : `https://sanjibdas.vercel.app${imageUrl}`
+                  : "https://sanjibdas.vercel.app/sanjib-logo.png";
+
+                return {
+                  "@type": "ListItem",
+                  "position": index + 1,
+                  "item": {
+                    "@type": "CreativeWork",
+                    "name": work.title,
+                    "description": work.description || `${work.title} - a project by Sanjib Das`,
+                    "image": absoluteImageUrl,
+                    "author": {
+                      "@type": "Person",
+                      "name": "Sanjib Das",
+                      "url": "https://sanjibdas.vercel.app/"
+                    }
+                  }
+                };
+              })
             }
           ]
         }}
